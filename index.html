@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HTML & CSS</title>
+
+  <!-- Google Fonts voor “game/tech” look -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar glass">
+    <div class="nav-inner">
+      <div class="brand">Vishal<span>_T</span></div>
+      <input id="search" type="search" placeholder="Zoek: tags, css, flex, grid, img, link, tabel..." aria-label="Zoek in de cheatsheet" />
+      <button id="menuBtn" class="menu-btn" aria-label="Menu">&#9776;</button>
+      <ul id="menu" class="menu">
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#html">HTML Tags</a></li>
+        <li><a href="#links-images">Links & Afbeeldingen</a></li>
+        <li><a href="#text">Tekst & Typografie</a></li>
+        <li><a href="#flex">Flexbox</a></li>
+        <li><a href="#grid">CSS Grid</a></li>
+        <li><a href="#boxmodel">Spacing & Box-model</a></li>
+        <li><a href="#position">Position</a></li>
+        <li><a href="#forms">Formulieren</a></li>
+        <li><a href="#mediaqueries">Media Queries</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- INTRO -->
+    <section id="intro" class="panel neon-border" data-search="intro uitleg overzicht cheatsheet html css flexbox grid img link url beginner">
+      <h1>HTML & CSS</h1>
+      <p class="lead">
+        Met voorbeelden, knoppen om live te spelen met instellingen, en korte uitleg.
+        Gebruik de zoekbalk hierboven om snel te filteren.
+      </p>
+      <div class="legend">
+        <span class="chip chip-html">&lt;HTML&gt;</span>
+        <span class="chip chip-css">{CSS}</span>
+        <span class="chip chip-js">JS⚡</span>
+        <span class="chip chip-demo">DEMO</span>
+      </div>
+    </section>
+
+    <!-- HTML TAGS -->
+    <section id="html" class="panel" data-search="html tags koppen headings paragrafen lists lijsten tabel table strong em code pre">
+      <h2>HTML Basis Tags</h2>
+
+      <article class="card">
+        <header><span class="chip chip-html">&lt;HTML&gt;</span> Koppen & Paragrafen</header>
+       <p>
+        Gebruik <code>&lt;h1&gt;</code> t/m <code>&lt;h6&gt;</code> voor koppen: <br>
+        - <code>h1</code> = belangrijkste titel, <code>h2</code> = subtitel, enz. <br>
+        Gebruik <code>&lt;p&gt;</code> voor gewone tekst. <br>
+        <strong>strong</strong> = belangrijke tekst, <em>em</em> = tekst die je wilt benadrukken.
+        </p>
+
+        <div class="demo">
+        <div class="demo-left">
+            <h1>H1 Titel</h1>
+            <h2>H2 Subtitel</h2>
+            <p>Dit is een <strong>paragraaf</strong> met <em>nadruk</em>.</p>
+        </div>
+        </div>
+          <pre class="code"><code>&lt;h1&gt;H1 Titel&lt;/h1&gt;
+&lt;h2&gt;H2 Subtitel&lt;/h2&gt;
+&lt;p&gt;Dit is een &lt;strong&gt;paragraaf&lt;/strong&gt; met &lt;em&gt;nadruk&lt;/em&gt;.&lt;/p&gt;</code></pre>
+        </div>
+      </article>
+
+      <article class="card">
+        <header><span class="chip chip-html">&lt;HTML&gt;</span> Lijsten</header>
+       <p>
+            Lijsten maken kan op twee manieren: geordend (<code>ol</code>) of ongeordend (<code>ul</code>).  
+            Elk item in de lijst staat in een <code>li</code> element.  
+            - Geordend (<code>ol</code>): de items krijgen automatisch een nummer.  
+            - Ongeordend (<code>ul</code>): de items krijgen standaard een bolletje.  
+        </p>
+        <div class="demo">
+          <div class="demo-left">
+            <ul>
+              <li>Punt 1</li><li>Punt 2</li>
+            </ul>
+            <ol>
+              <li>Stap 1</li><li>Stap 2</li>
+            </ol>
+          </div>
+          <pre class="code"><code>&lt;ul&gt;
+  &lt;li&gt;Punt 1&lt;/li&gt;
+  &lt;li&gt;Punt 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Stap 1&lt;/li&gt;
+  &lt;li&gt;Stap 2&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+        </div>
+      </article>
+
+      <article class="card">
+        <header><span class="chip chip-html">&lt;HTML&gt;</span> Tabel</header>
+        <p>Tabel met koprij (thead) en body (tbody).</p>
+        <div class="demo">
+          <div class="demo-left">
+            <table class="table">
+              <thead><tr><th>Naam</th><th>Score</th></tr></thead>
+              <tbody><tr><td>Alex</td><td>95</td></tr><tr><td>Sam</td><td>88</td></tr></tbody>
+            </table>
+          </div>
+          <pre class="code"><code>&lt;table&gt;
+  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Naam&lt;/th&gt;&lt;th&gt;Score&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Alex&lt;/td&gt;&lt;td&gt;95&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Sam&lt;/td&gt;&lt;td&gt;88&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+        </div>
+      </article>
+    </section>
+
+    <!-- LINKS & IMAGES -->
+    <section id="links-images" class="panel" data-search="a anchor link url href target rel noopener noreferrer img afbeelding alt width height figure figcaption">
+      <h2>Links & Afbeeldingen (URL &lt;a&gt; en &lt;img&gt;)</h2>
+
+      <article class="card">
+        <header><span class="chip chip-html">&lt;HTML&gt;</span> Link (URL)</header>
+        <p>
+            Gebruik <code>&lt;a href="URL"&gt;</code> om een link naar een andere pagina of website te maken.  
+            - <code>target="_blank"</code> opent de link in een nieuw tabblad.  
+            - <code>rel="noopener"</code> zorgt ervoor dat de nieuwe pagina geen toegang krijgt tot jouw pagina (veiligheid).  
+        </p>
+        <div class="demo">
+          <div class="demo-left">
+            <p><a class="btn-link" href="https://example.com" target="_blank" rel="noopener">Ga naar example.com</a></p>
+          </div>
+          <pre class="code"><code>&lt;a href="https://example.com" target="_blank" rel="noopener"&gt;
+  Ga naar example.com
+&lt;/a&gt;</code></pre>
+        </div>
+      </article>
+
+      <article class="card">
+        <header><span class="chip chip-html">&lt;HTML&gt;</span> Afbeelding (&lt;img&gt;)</header>
+       <p>
+            Gebruik <code>alt</code> om te beschrijven wat er op de afbeelding staat. 
+            Pas breedte en hoogte via CSS aan met <code>width</code> en <code>height</code>.
+        </p>
+        <div class="demo">
+          <div class="demo-left">
+            <figure class="figure">
+              <img src="https://picsum.photos/400/220" alt="Voorbeeldafbeelding van landschap" />
+              <figcaption>Voorbeeld met <code>&lt;img&gt;</code> en <code>&lt;figcaption&gt;</code>.</figcaption>
+            </figure>
+          </div>
+          <pre class="code"><code>&lt;figure&gt;
+  &lt;img src="https://picsum.photos/400/220" alt="Voorbeeldafbeelding van landschap"&gt;
+  &lt;figcaption&gt;Uitleg bij de afbeelding.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+        </div>
+      </article>
+    </section>
+
+    <!-- TEKST -->
+    <section id="text" class="panel" data-search="typografie fonts kleur color font-size line-height text-align">
+      <h2>Tekst & Typografie</h2>
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span> Basis tekststijlen</header>
+        <div class="demo two-col">
+          <div>
+            <p class="t-small">Kleinere tekst</p>
+            <p class="t-base">Normale tekst</p>
+            <p class="t-large">Grotere tekst</p>
+            <p class="t-accent">Accentkleur</p>
+            <p class="t-center">Gecentreerde tekst</p>
+          </div>
+          <pre class="code"><code>.t-small { font-size: 0.85rem; }
+.t-base  { font-size: 1rem; }
+.t-large { font-size: 1.3rem; }
+.t-accent{ color: var(--c-accent); }
+.t-center{ text-align: center; }</code></pre>
+        </div>
+      </article>
+    </section>
+
+    <!-- FLEXBOX -->
+    <section id="flex" class="panel" data-search="flexbox display flex-direction row column justify-content align-items center start end space-between space-around wrap gap grow shrink basis">
+      <h2>Flexbox</h2>
+
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span><span class="chip chip-demo">DEMO</span> Container-instellingen</header>
+        <p>Speel met de controls en zie direct wat er gebeurt.</p>
+
+        <div class="controls">
+          <label>direction
+            <select id="flex-direction">
+              <option>row</option>
+              <option>row-reverse</option>
+              <option>column</option>
+              <option>column-reverse</option>
+            </select>
+          </label>
+
+          <label>justify-content
+            <select id="justify-content">
+              <option>flex-start</option>
+              <option>center</option>
+              <option>flex-end</option>
+              <option>space-between</option>
+              <option>space-around</option>
+              <option>space-evenly</option>
+            </select>
+          </label>
+
+          <label>align-items
+            <select id="align-items">
+              <option>stretch</option>
+              <option>flex-start</option>
+              <option selected>center</option>
+              <option>flex-end</option>
+            </select>
+          </label>
+
+          <label>wrap
+            <select id="flex-wrap">
+              <option>nowrap</option>
+              <option selected>wrap</option>
+              <option>wrap-reverse</option>
+            </select>
+          </label>
+
+          <label>gap (px)
+            <input id="flex-gap" type="number" value="12" min="0" max="60" />
+          </label>
+        </div>
+
+        <div id="flex-demo" class="flex-area">
+          <div class="fx item-1">1</div>
+          <div class="fx item-2 tall">2</div>
+          <div class="fx item-3">3</div>
+          <div class="fx item-4">4</div>
+        </div>
+
+        <details class="hint">
+          <summary>Uitleg</summary>
+          <ul>
+            <li>
+                <code>flex-direction</code>: bepaalt in welke richting de items gaan. <br>
+                Voor <code>row</code> = horizontaal, <code>column</code> = verticaal.
+            </li>
+            <br>
+            <li>
+                <code>justify-content</code>: verdeelt de items langs de hoofdrichting. <br>
+                Bij <code>row</code> = van links naar rechts, bij <code>column</code> = van boven naar beneden.
+            </li>
+            <br>
+            <li>
+                <code>align-items</code>: bepaalt hoe de items zich verplaatsen **dwars op de richting**. <br>
+                Dus als ze in een rij staan, verschuiven ze omhoog of omlaag; <br>
+                als ze in een kolom staan, verschuiven ze naar links of rechts.
+            </li>
+            <br>
+            <li>
+                <code>flex-wrap</code>: laat items doorlopen naar een nieuwe rij of kolom als er te weinig ruimte is.
+            </li>
+            <br>
+            <li>
+                <code>gap</code>: de afstand tussen de items.
+            </li>
+        </ul>
+        </details>
+      </article>
+
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span><span class="chip chip-demo">DEMO</span> Item-instellingen (grow/shrink/basis)</header>
+        <div class="controls">
+          <label>item #2 → flex-grow
+            <input id="grow-2" type="number" value="1" min="0" max="5" />
+          </label>
+          <label>item #2 → flex-shrink
+            <input id="shrink-2" type="number" value="1" min="0" max="5" />
+          </label>
+          <label>item #2 → flex-basis (px)
+            <input id="basis-2" type="number" value="120" min="0" max="400" />
+          </label>
+        </div>
+
+        <div id="flex-items-demo" class="flex-area">
+          <div class="fx">1</div>
+          <div id="fx2" class="fx accent">2</div>
+          <div class="fx">3</div>
+        </div>
+
+        <details class="hint">
+          <summary>Uitleg</summary>
+          <ul>
+            <li><code>flex-grow</code>: hoeveel extra ruimte een item krijgt als er plek over is.</li>
+            <br>
+            <li><code>flex-shrink</code>: hoeveel een item kleiner wordt als er te weinig ruimte is.</li>
+            <br>
+            <li><code>flex-basis</code>: de startmaat van het item (breedte of hoogte, afhankelijk van de richting).</li>
+            <br>
+            <li><code>flex</code> shorthand: kortere manier om <code>grow shrink basis</code> tegelijk in te stellen, dus <code>flex: grow shrink basis;</code></li>
+         </ul>
+        </details>
+      </article>
+    </section>
+
+    <!-- GRID -->
+    <section id="grid" class="panel" data-search="grid columns rows repeat fr minmax auto-fit auto-fill gap">
+      <h2>CSS Grid</h2>
+
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span><span class="chip chip-demo">DEMO</span> Kolommen & gap</header>
+        <div class="controls">
+          <label>kolommen
+            <input id="grid-cols" type="number" value="3" min="1" max="8" />
+          </label>
+          <label>gap (px)
+            <input id="grid-gap" type="number" value="12" min="0" max="48" />
+          </label>
+        </div>
+
+        <div id="grid-demo" class="grid-area">
+          <div>A</div><div>B</div><div>C</div><div>D</div><div>E</div><div>F</div>
+        </div>
+
+        <details class="hint">
+          <summary>Uitleg</summary>
+          <p>
+            <code>grid-template-columns: repeat(n, 1fr)</code> = maak <em>n</em> kolommen die allemaal even breed zijn.<br>
+            <strong>Let op:</strong> <em>n</em> is een getal dat je zelf kiest, bijvoorbeeld 3 betekent 3 kolommen.<br>
+            <code>gap</code> = de ruimte tussen de vakjes in het grid, zowel horizontaal als verticaal.
+         </p>
+        </details>
+      </article>
+    </section>
+
+    <!-- SPACING & BOX MODEL -->
+    <section id="boxmodel" class="panel" data-search="margin padding border box shadow">
+      <h2>Spacing & Box-model</h2>
+
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span> margin vs padding</header>
+        <div class="demo two-col">
+          <div>
+            <div class="box margin-demo">
+                <strong>Margin:</strong> ruimte **buiten** het vakje, tussen dit vakje en andere vakjes / elementen (bijvoorbeeld 16px)
+                </div>
+                <div class="box padding-demo">
+                <strong>Padding:</strong> ruimte **binnen** het vakje, tussen de rand van het vakje en de inhoud erin (bijvoorbeeld 16px)
+            </div>
+          </div>
+          <pre class="code"><code>.margin-demo { margin: 16px; }
+.padding-demo{ padding: 16px; }</code></pre>
+        </div>
+      </article>
+    </section>
+
+    <!-- POSITION -->
+    <section id="position" class="panel" data-search="position static relative absolute fixed sticky top left z-index">
+      <h2>Position</h2>
+
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span><span class="chip chip-demo">DEMO</span> Position types</header>
+        <div class="controls">
+          <label>type
+            <select id="pos-type">
+              <option>static</option>
+              <option>relative</option>
+              <option>absolute</option>
+              <option>fixed</option>
+              <option>sticky</option>
+            </select>
+          </label>
+          <label>top (px) <input id="pos-top" type="number" value="0" min="-100" max="200" /></label>
+          <label>left (px) <input id="pos-left" type="number" value="0" min="-100" max="200" /></label>
+        </div>
+
+        <div class="pos-stage">
+          <div class="pos-ref">REF</div>
+          <div id="pos-box" class="pos-box">BOX</div>
+        </div>
+
+        <details class="hint">
+          <summary>Uitleg</summary>
+          <ul>
+            <li><code>relative</code>: verplaatst het element ten opzichte van waar het normaal staat.</li>
+            <br>
+            <li><code>absolute</code>: positie wordt bepaald ten opzichte van het dichtstbijzijnde ouder-element dat een positie heeft (anders de pagina zelf).</li>
+            <br>
+            <li><code>fixed</code>: blijft op dezelfde plek in het scherm, ook als je scrollt.</li>
+            <br>
+            <li><code>sticky</code>: blijft normaal volgen totdat je scrolt naar het element, dan “plakt” het vast.</li>
+        </ul>
+        </details>
+      </article>
+    </section>
+
+    <!-- FORMS -->
+    <section id="forms" class="panel" data-search="form input label placeholder button checkbox radio select textarea">
+      <h2>Formulieren</h2>
+      <article class="card">
+        <header><span class="chip chip-html">&lt;HTML&gt;</span> Basis form</header>
+        <div class="demo two-col">
+          <form class="form">
+            <label>Naam
+              <input type="text" placeholder="Jouw naam" />
+            </label>
+            <label>E-mail
+              <input type="email" placeholder="jij@voorbeeld.nl" />
+            </label>
+            <label>Type
+              <select>
+                <option>Keuze A</option>
+                <option>Keuze B</option>
+              </select>
+            </label>
+            <label>Bericht
+              <textarea rows="3" placeholder="Schrijf iets..."></textarea>
+            </label>
+            <div class="form-row">
+              <label><input type="checkbox" /> Nieuwsbrief</label>
+              <label><input type="radio" name="r" checked /> Optie 1</label>
+              <label><input type="radio" name="r" /> Optie 2</label>
+            </div>
+            <button type="button" class="btn primary">Verzenden</button>
+          </form>
+
+         <pre class="code"><code>&lt;form&gt;
+  &lt;label&gt;Naam
+    &lt;input type="text" placeholder="Jouw naam"&gt;
+  &lt;/label&gt;
+
+  &lt;label&gt;E-mail
+    &lt;input type="email" placeholder="jij@voorbeeld.nl"&gt;
+  &lt;/label&gt;
+
+  &lt;label&gt;Type
+    &lt;select&gt;
+      &lt;option&gt;Keuze A&lt;/option&gt;
+      &lt;option&gt;Keuze B&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/label&gt;
+
+  &lt;label&gt;Bericht
+    &lt;textarea rows="3" placeholder="Schrijf iets..."&gt;&lt;/textarea&gt;
+  &lt;/label&gt;
+
+  &lt;div&gt;
+    &lt;label&gt;&lt;input type="checkbox"&gt; Nieuwsbrief&lt;/label&gt;
+    &lt;label&gt;&lt;input type="radio" name="r" checked&gt; Optie 1&lt;/label&gt;
+    &lt;label&gt;&lt;input type="radio" name="r"&gt; Optie 2&lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;button type="submit"&gt;Verzenden&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+        </div>
+      </article>
+    </section>
+
+    <!-- MEDIA QUERIES -->
+    <section id="mediaqueries" class="panel" data-search="media queries responsive breakpoint">
+      <h2>Media Queries</h2>
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span> Responsieve demo</header>
+        <p>Dit blok verandert kleur bij kleinere schermen (zie CSS).</p>
+        <div class="responsive-box">Resize je venster</div>
+        <pre class="code"><code>@media (max-width: 768px) { .responsive-box { background: #1dd3b0; } }
+@media (max-width: 480px) { .responsive-box { background: #f72585; } }</code></pre>
+      </article>
+    </section>
+
+    <footer class="footer glass">
+      <p> Vishal Tewari</p>
+    </footer>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

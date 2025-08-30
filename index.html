@@ -48,50 +48,76 @@
       </div>
     </section>
 
-    <!-- HTML TAGS -->
-    <section id="html" class="panel" data-search="html tags koppen headings paragrafen lists lijsten tabel table strong em code pre">
-      <h2>HTML Basis Tags</h2>
+<!-- HTML TAGS -->
+<section id="html" class="panel" data-search="html tags basis headings paragrafen lists lijsten tabel table strong em code pre div span structuur">
+  <h2>HTML Basis Tags</h2>
 
-      <article class="card">
-        <header><span class="chip chip-html">&lt;HTML&gt;</span> Koppen & Paragrafen</header>
-       <p>
-        Gebruik <code>&lt;h1&gt;</code> t/m <code>&lt;h6&gt;</code> voor koppen: <br>
-        - <code>h1</code> = belangrijkste titel, <code>h2</code> = subtitel, enz. <br>
-        Gebruik <code>&lt;p&gt;</code> voor gewone tekst. <br>
-        <strong>strong</strong> = belangrijke tekst, <em>em</em> = tekst die je wilt benadrukken.
-        </p>
+  <!-- Document structuur -->
+  <article class="card">
+    <header><span class="chip chip-html">&lt;HTML&gt;</span> Document</header>
+    <p>
+      Een HTML-pagina bestaat altijd uit 3 grote delen:  
+      - <code>&lt;head&gt;</code>: hier staat de titel en instellingen.  
+      - <code>&lt;body&gt;</code>: hier komt de inhoud die je ziet.  
+    </p>
+    <div class="demo">
+      <div class="demo-left">
+        <p><strong>Voorbeeld van een simpele pagina:</strong></p>
+      </div>
+      <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="nl"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Mijn pagina&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welkom!&lt;/h1&gt;
+    &lt;p&gt;Dit is de inhoud.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+  </article>
 
-        <div class="demo">
-        <div class="demo-left">
-            <h1>H1 Titel</h1>
-            <h2>H2 Subtitel</h2>
-            <p>Dit is een <strong>paragraaf</strong> met <em>nadruk</em>.</p>
-        </div>
-        </div>
-          <pre class="code"><code>&lt;h1&gt;H1 Titel&lt;/h1&gt;
+  <!-- Koppen & Paragrafen -->
+  <article class="card">
+    <header><span class="chip chip-html">&lt;HTML&gt;</span> Koppen & Tekst</header>
+    <p>
+      Gebruik <code>&lt;h1&gt;</code> t/m <code>&lt;h6&gt;</code> voor titels.  
+      <code>&lt;p&gt;</code> is voor normale tekst.  
+      <code>&lt;strong&gt;</code> maakt tekst vet en belangrijk.  
+      <code>&lt;em&gt;</code> geeft nadruk (schuin).  
+    </p>
+    <div class="demo">
+      <div class="demo-left">
+        <h1>H1 Titel</h1>
+        <h2>H2 Subtitel</h2>
+        <p>Een <strong>belangrijke</strong> zin met <em>nadruk</em>.</p>
+      </div>
+      <pre class="code"><code>&lt;h1&gt;H1 Titel&lt;/h1&gt;
 &lt;h2&gt;H2 Subtitel&lt;/h2&gt;
-&lt;p&gt;Dit is een &lt;strong&gt;paragraaf&lt;/strong&gt; met &lt;em&gt;nadruk&lt;/em&gt;.&lt;/p&gt;</code></pre>
-        </div>
-      </article>
+&lt;p&gt;Een &lt;strong&gt;belangrijke&lt;/strong&gt; zin met &lt;em&gt;nadruk&lt;/em&gt;.&lt;/p&gt;</code></pre>
+    </div>
+  </article>
 
-      <article class="card">
-        <header><span class="chip chip-html">&lt;HTML&gt;</span> Lijsten</header>
-       <p>
-            Lijsten maken kan op twee manieren: geordend (<code>ol</code>) of ongeordend (<code>ul</code>).  
-            Elk item in de lijst staat in een <code>li</code> element.  
-            - Geordend (<code>ol</code>): de items krijgen automatisch een nummer.  
-            - Ongeordend (<code>ul</code>): de items krijgen standaard een bolletje.  
-        </p>
-        <div class="demo">
-          <div class="demo-left">
-            <ul>
-              <li>Punt 1</li><li>Punt 2</li>
-            </ul>
-            <ol>
-              <li>Stap 1</li><li>Stap 2</li>
-            </ol>
-          </div>
-          <pre class="code"><code>&lt;ul&gt;
+  <!-- Lijsten -->
+  <article class="card">
+    <header><span class="chip chip-html">&lt;HTML&gt;</span> Lijsten</header>
+    <p>
+      <code>&lt;ul&gt;</code> = lijst met bolletjes (ongeordend).  
+      <code>&lt;ol&gt;</code> = lijst met nummers (geordend).  
+      Items staan in <code>&lt;li&gt;</code>.  
+    </p>
+    <div class="demo">
+      <div class="demo-left">
+        <ul>
+          <li>Punt 1</li>
+          <li>Punt 2</li>
+        </ul>
+        <ol>
+          <li>Stap 1</li>
+          <li>Stap 2</li>
+        </ol>
+      </div>
+      <pre class="code"><code>&lt;ul&gt;
   &lt;li&gt;Punt 1&lt;/li&gt;
   &lt;li&gt;Punt 2&lt;/li&gt;
 &lt;/ul&gt;
@@ -100,94 +126,81 @@
   &lt;li&gt;Stap 1&lt;/li&gt;
   &lt;li&gt;Stap 2&lt;/li&gt;
 &lt;/ol&gt;</code></pre>
-        </div>
-      </article>
+    </div>
+  </article>
 
-      <article class="card">
-        <header><span class="chip chip-html">&lt;HTML&gt;</span> Tabel</header>
-        <p>Tabel met koprij (thead) en body (tbody).</p>
-        <div class="demo">
-          <div class="demo-left">
-            <table class="table">
-              <thead><tr><th>Naam</th><th>Score</th></tr></thead>
-              <tbody><tr><td>Alex</td><td>95</td></tr><tr><td>Sam</td><td>88</td></tr></tbody>
-            </table>
-          </div>
-          <pre class="code"><code>&lt;table&gt;
-  &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Naam&lt;/th&gt;&lt;th&gt;Score&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+  <!-- Div & Span -->
+  <article class="card">
+    <header><span class="chip chip-html">&lt;HTML&gt;</span> Extra containers</header>
+    <p>
+      - <code>&lt;div&gt;</code> gebruik je om een blok te maken.  
+      - <code>&lt;span&gt;</code> gebruik je om een stukje tekst te markeren.  
+    </p>
+    <div class="demo">
+      <div class="demo-left">
+        <div style="border:1px solid #ccc; padding:5px;">Dit is een div</div>
+        <p>Tekst met <span style="color:red;">rode span</span>.</p>
+      </div>
+      <pre class="code"><code>&lt;div&gt;Dit is een div&lt;/div&gt;
+&lt;p&gt;Tekst met &lt;span&gt;rode span&lt;/span&gt;.&lt;/p&gt;</code></pre>
+    </div>
+  </article>
+
+  <!-- Pagina-indeling -->
+  <article class="card">
+    <header><span class="chip chip-html">&lt;HTML&gt;</span> Pagina indeling</header>
+    <p>
+      Deze tags geven structuur aan je website:  
+      - <code>&lt;header&gt;</code> = bovenkant (titel/logo)  
+      - <code>&lt;nav&gt;</code> = menu met links  
+      - <code>&lt;section&gt;</code> = een deel van de inhoud  
+      - <code>&lt;article&gt;</code> = zelfstandig stuk tekst of bericht  
+      - <code>&lt;footer&gt;</code> = onderkant (contact, copyright)  
+    </p>
+    <div class="demo">
+      <div class="demo-left">
+        <header>Dit is de bovenkant</header>
+        <nav>Menu</nav>
+        <section>Hoofdcontent</section>
+        <footer>Onderkant</footer>
+      </div>
+      <pre class="code"><code>&lt;header&gt;Bovenkant&lt;/header&gt;
+&lt;nav&gt;Menu&lt;/nav&gt;
+&lt;section&gt;Hoofdcontent&lt;/section&gt;
+&lt;footer&gt;Onderkant&lt;/footer&gt;</code></pre>
+    </div>
+  </article>
+
+  <!-- Tabel -->
+  <article class="card">
+    <header><span class="chip chip-html">&lt;HTML&gt;</span> Tabel</header>
+    <p>
+      Met <code>&lt;table&gt;</code> maak je tabellen.  
+      - <code>&lt;thead&gt;</code> = kop van de tabel.  
+      - <code>&lt;tbody&gt;</code> = de rijen met inhoud.  
+    </p>
+    <div class="demo">
+      <div class="demo-left">
+        <table class="table">
+          <thead><tr><th>Naam</th><th>Score</th></tr></thead>
+          <tbody>
+            <tr><td>Alex</td><td>95</td></tr>
+            <tr><td>Sam</td><td>88</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <pre class="code"><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th&gt;Naam&lt;/th&gt;&lt;th&gt;Score&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;&lt;td&gt;Alex&lt;/td&gt;&lt;td&gt;95&lt;/td&gt;&lt;/tr&gt;
     &lt;tr&gt;&lt;td&gt;Sam&lt;/td&gt;&lt;td&gt;88&lt;/td&gt;&lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
-        </div>
-      </article>
-    </section>
-
-    <!-- LINKS & IMAGES -->
-    <section id="links-images" class="panel" data-search="a anchor link url href target rel noopener noreferrer img afbeelding alt width height figure figcaption">
-      <h2>Links & Afbeeldingen (URL &lt;a&gt; en &lt;img&gt;)</h2>
-
-      <article class="card">
-        <header><span class="chip chip-html">&lt;HTML&gt;</span> Link (URL)</header>
-        <p>
-            Gebruik <code>&lt;a href="URL"&gt;</code> om een link naar een andere pagina of website te maken.  
-            - <code>target="_blank"</code> opent de link in een nieuw tabblad.  
-            - <code>rel="noopener"</code> zorgt ervoor dat de nieuwe pagina geen toegang krijgt tot jouw pagina (veiligheid).  
-        </p>
-        <div class="demo">
-          <div class="demo-left">
-            <p><a class="btn-link" href="https://example.com" target="_blank" rel="noopener">Ga naar example.com</a></p>
-          </div>
-          <pre class="code"><code>&lt;a href="https://example.com" target="_blank" rel="noopener"&gt;
-  Ga naar example.com
-&lt;/a&gt;</code></pre>
-        </div>
-      </article>
-
-      <article class="card">
-        <header><span class="chip chip-html">&lt;HTML&gt;</span> Afbeelding (&lt;img&gt;)</header>
-       <p>
-            Gebruik <code>alt</code> om te beschrijven wat er op de afbeelding staat. 
-            Pas breedte en hoogte via CSS aan met <code>width</code> en <code>height</code>.
-        </p>
-        <div class="demo">
-          <div class="demo-left">
-            <figure class="figure">
-              <img src="https://picsum.photos/400/220" alt="Voorbeeldafbeelding van landschap" />
-              <figcaption>Voorbeeld met <code>&lt;img&gt;</code> en <code>&lt;figcaption&gt;</code>.</figcaption>
-            </figure>
-          </div>
-          <pre class="code"><code>&lt;figure&gt;
-  &lt;img src="https://picsum.photos/400/220" alt="Voorbeeldafbeelding van landschap"&gt;
-  &lt;figcaption&gt;Uitleg bij de afbeelding.&lt;/figcaption&gt;
-&lt;/figure&gt;</code></pre>
-        </div>
-      </article>
-    </section>
-
-    <!-- TEKST -->
-    <section id="text" class="panel" data-search="typografie fonts kleur color font-size line-height text-align">
-      <h2>Tekst & Typografie</h2>
-      <article class="card">
-        <header><span class="chip chip-css">{CSS}</span> Basis tekststijlen</header>
-        <div class="demo two-col">
-          <div>
-            <p class="t-small">Kleinere tekst</p>
-            <p class="t-base">Normale tekst</p>
-            <p class="t-large">Grotere tekst</p>
-            <p class="t-accent">Accentkleur</p>
-            <p class="t-center">Gecentreerde tekst</p>
-          </div>
-          <pre class="code"><code>.t-small { font-size: 0.85rem; }
-.t-base  { font-size: 1rem; }
-.t-large { font-size: 1.3rem; }
-.t-accent{ color: var(--c-accent); }
-.t-center{ text-align: center; }</code></pre>
-        </div>
-      </article>
-    </section>
-
+    </div>
+  </article>
+</section>
     <!-- FLEXBOX -->
     <section id="flex" class="panel" data-search="flexbox display flex-direction row column justify-content align-items center start end space-between space-around wrap gap grow shrink basis">
       <h2>Flexbox</h2>

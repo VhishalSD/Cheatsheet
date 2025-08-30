@@ -14,7 +14,7 @@
   <!-- NAVBAR -->
   <nav class="navbar glass">
     <div class="nav-inner">
-      <div class="brand">Vishal<span>_T</span></div>
+      <div class="brand">Vishal<span>_T©</span></div>
       <input id="search" type="search" placeholder="Zoek: tags, css, flex, grid, img, link, tabel..." aria-label="Zoek in de cheatsheet" />
       <button id="menuBtn" class="menu-btn" aria-label="Menu">&#9776;</button>
       <ul id="menu" class="menu">
@@ -51,6 +51,45 @@
 <!-- HTML TAGS -->
 <section id="html" class="panel" data-search="html tags basis headings paragrafen lists lijsten tabel table strong em code pre div span structuur">
   <h2>HTML Basis Tags</h2>
+
+  <!-- LINKS & IMAGES -->
+    <section id="links-images" class="panel" data-search="a anchor link url href target rel noopener noreferrer img afbeelding alt width height figure figcaption">
+      <h2>Links & Afbeeldingen (URL &lt;a&gt; en &lt;img&gt;)</h2>
+
+      <article class="card">
+        <header><span class="chip chip-html">&lt;HTML&gt;</span> Link (URL)</header>
+        <p>
+          Gebruik <code>&lt;a href="URL"&gt;</code> voor hyperlinks. 
+          <code>target="_blank"</code> = nieuw tabblad. Voeg <code>rel="noopener"</code> toe voor veiligheid.
+        </p>
+        <div class="demo">
+          <div class="demo-left">
+            <p><a class="btn-link" href="https://example.com" target="_blank" rel="noopener">Ga naar example.com</a></p>
+          </div>
+          <pre class="code"><code>&lt;a href="https://example.com" target="_blank" rel="noopener"&gt;
+  Ga naar example.com
+&lt;/a&gt;</code></pre>
+        </div>
+      </article>
+
+      <article class="card">
+  <header><span class="chip chip-html">&lt;HTML&gt;</span> Afbeelding met caption</header>
+  <p>
+    Gebruik <code>&lt;figure&gt;</code> voor een afbeelding met uitleg (<code>&lt;figcaption&gt;</code>).  
+    <code>alt</code> is belangrijk voor toegankelijkheid.
+  </p>
+  <div class="demo t-center">
+    <figure class="figure">
+      <img src="https://picsum.photos/300/180" alt="Voorbeeld landschap">
+      <figcaption>Korte uitleg bij de afbeelding</figcaption>
+    </figure>
+  </div>
+  <pre class="code"><code>&lt;figure&gt;
+  &lt;img src="https://picsum.photos/300/180" alt="Voorbeeld landschap"&gt;
+  &lt;figcaption&gt;Korte uitleg bij de afbeelding&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+</article>
+    </section>
 
   <!-- Document structuur -->
   <article class="card">
@@ -522,7 +561,7 @@
     </section>
 
     <footer class="footer glass">
-      <p> Vishal Tewari</p>
+      <p> Vishal Tewari©</p>
     </footer>
   </main>
 

@@ -390,14 +390,46 @@
         <details class="hint">
           <summary>Uitleg</summary>
           <ul>
-            <li><code>relative</code>: verplaatst het element ten opzichte van waar het normaal staat.</li>
-            <br>
-            <li><code>absolute</code>: positie wordt bepaald ten opzichte van het dichtstbijzijnde ouder-element dat een positie heeft (anders de pagina zelf).</li>
-            <br>
-            <li><code>fixed</code>: blijft op dezelfde plek in het scherm, ook als je scrollt.</li>
-            <br>
-            <li><code>sticky</code>: blijft normaal volgen totdat je scrolt naar het element, dan “plakt” het vast.</li>
-        </ul>
+  <li><code>relative</code>
+    <ul>
+      <li>Het element zit eerst op zijn normale plek in de pagina.</li>
+      <li>Als je <code>top</code>, <code>left</code>, <code>bottom</code> of <code>right</code> instelt, wordt het daarvanuit verschoven.</li>
+      <li>Andere elementen “zien” het element nog steeds op de oorspronkelijke plek.</li>
+      <li><strong>Voorbeeld:</strong> Je hebt een paragraaf in een blok. Je zet <code>position: relative; top: 10px;</code>. De paragraaf wordt 10px naar beneden geschoven, maar andere tekst doet alsof hij nog op de originele plek staat.</li>
+    </ul>
+  </li>
+  <hr>
+  <li><code>absolute</code>
+    <ul>
+      <li>Het element verplaatst zich helemaal onafhankelijk van de normale flow.</li>
+      <li>Het zoekt naar het dichtstbijzijnde ouder-element dat al een <code>position</code> heeft (<code>relative</code>, <code>absolute</code>, <code>sticky</code>), en wordt daar ten opzichte van geplaatst.</li>
+      <li>Als er geen ouder met <code>position</code> is, wordt het geplaatst ten opzichte van de hele pagina.</li>
+      <li><strong>Voorbeeld:</strong> Een knop in een div. Div heeft <code>position: relative;</code>. Knop heeft <code>position: absolute; top: 0; left: 0;</code>. De knop staat linksboven in die div, niet ergens anders.</li>
+    </ul>
+  </li>
+  <hr>
+  <li><code>fixed</code>
+    <ul>
+      <li>Het element blijft stevig op één plek op het scherm.</li>
+      <li>Scroll je de pagina? Het element beweegt niet mee.</li>
+      <li><strong>Voorbeeld:</strong> Navigatiebalk die altijd bovenaan je scherm blijft, zelfs als je omlaag scrollt.</li>
+    </ul>
+  </li>
+  <hr>
+  <li><code>sticky</code>
+    <ul>
+      <li>Het element gedraagt zich eerst als normaal (zoals <code>relative</code>).</li>
+      <li>Zodra je scrolt en het element een bepaalde positie bereikt, plakt het vast totdat het uit zijn container valt.</li>
+      <li><strong>Voorbeeld:</strong> Een koptekst in een sectie: hij beweegt mee tot je bij het einde van die sectie komt, dan blijft hij daar “plakken”.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Kort gezegd:</strong> <br>
+- <code>relative</code> = verplaats ten opzichte van originele plek.<br>
+- <code>absolute</code> = positie t.o.v. ouder-element.<br>
+- <code>fixed</code> = blijft altijd op scherm.<br>
+- <code>sticky</code> = normaal bewegen, plakt vast bij scroll.</p>
         </details>
       </article>
     </section>

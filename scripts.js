@@ -485,8 +485,31 @@ function changeImage() {
     }
 }
 
-// Make changeImage available globally
+// Figure image changer
+function changeFigureImage() {
+    const img = document.getElementById('figure-img');
+    if (img) {
+        // Generate random number for different photo
+        const randomNum = Math.floor(Math.random() * 1000) + 1;
+        
+        // Add loading effect
+        img.style.opacity = '0.6';
+        img.style.transform = 'scale(0.95)';
+        
+        // Update with new random picsum photo
+        img.src = `https://picsum.photos/280/180?random=${randomNum}`;
+        
+        // Restore when loaded
+        img.onload = function() {
+            img.style.opacity = '1';
+            img.style.transform = 'scale(1)';
+        };
+    }
+}
+
+// Make functions available globally
 window.changeImage = changeImage;
+window.changeFigureImage = changeFigureImage;
 
 // Smooth scrolling for navigation links
 function setupSmoothScrolling() {

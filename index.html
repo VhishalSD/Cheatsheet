@@ -13,37 +13,28 @@
 <body>
 
   <!-- NAVBAR -->
-<nav class="navbar glass">
-  <div class="nav-inner">
-    <div class="brand">Vishal<span>_T©</span></div>
-    <input 
-      id="search" 
-      type="search" 
-      placeholder="Zoek: selectors, units, colors, flex, grid..." 
-      aria-label="Zoek in de cheatsheet" 
-    />
-
-    <!-- Dit is je enige toggle-knop -->
-    <button id="menuBtn" class="menu-btn" aria-label="Menu">&#9776;</button>
-
-    <!-- Dit is je enige menu -->
-    <ul id="menu" class="menu">
-      <li><a href="#intro">Intro</a></li>
-      <li><a href="#html-basics">HTML Basics</a></li>
-      <li><a href="#css-selectors">CSS Selectors</a></li>
-      <li><a href="#css-units">Units & Colors</a></li>
-      <li><a href="#typography">Typography</a></li>
-      <li><a href="#display-layout">Display & Layout</a></li>
-      <li><a href="#visual-styling">Visual Styling</a></li>
-      <li><a href="#flex">Flexbox</a></li>
-      <li><a href="#grid">CSS Grid</a></li>
-      <li><a href="#position">Position</a></li>
-      <li><a href="#animations">Animations</a></li>
-      <li><a href="#forms">Formulieren</a></li>
-      <li><a href="#responsive">Responsive</a></li>
-    </ul>
-  </div>
-</nav>
+  <nav class="navbar glass">
+    <div class="nav-inner">
+      <div class="brand">Vishal<span>_T©</span></div>
+      <input id="search" type="search" placeholder="Zoek: selectors, units, colors, flex, grid..." aria-label="Zoek in de cheatsheet" />
+      <button id="menuBtn" class="menu-btn" aria-label="Menu">&#9776;</button>
+      <ul id="menu" class="menu">
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#html-basics">HTML Basics</a></li>
+        <li><a href="#css-selectors">CSS Selectors</a></li>
+        <li><a href="#css-units">Units & Colors</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#display-layout">Display & Layout</a></li>
+        <li><a href="#visual-styling">Visual Styling</a></li>
+        <li><a href="#flex">Flexbox</a></li>
+        <li><a href="#grid">CSS Grid</a></li>
+        <li><a href="#position">Position</a></li>
+        <li><a href="#animations">Animations</a></li>
+        <li><a href="#forms">Formulieren</a></li>
+        <li><a href="#responsive">Responsive</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <main class="container">
     <!-- INTRO -->
@@ -798,9 +789,48 @@ filter: drop-shadow(0 0 10px #00e5ff);</code></pre>
             <br>
             <li><code>flex</code> shorthand: kortere manier om <code>grow shrink basis</code> tegelijk in te stellen, dus <code>flex: grow shrink basis;</code></li>
          </ul>
+      <!-- Figure & Images Section -->
+      <article class="card">
+        <header><span class="chip chip-html">&lt;HTML&gt;</span> Figure & Afbeelding met uitleg</header>
+        <p>Gebruik <code>&lt;figure&gt;</code> voor afbeeldingen met een bijschrift (caption).</p>
+        <div class="demo two-col">
+          <div class="demo-left">
+            <div class="figure-demo-container">
+              <figure class="demo-figure">
+                <img id="figure-img" src="https://picsum.photos/280/180?random=100" alt="Mooie natuur foto" class="figure-demo-img">
+                <figcaption class="figure-demo-caption">
+                  **Afbeelding** → picsum.photos zorgt voor een willekeurige foto, elke keer anders.
+                </figcaption>
+              </figure>
+              <button onclick="changeFigureImage()" class="btn-demo">Andere foto!</button>
+            </div>
+          </div>
+          <pre class="code"><code>&lt;figure&gt;
+  &lt;img src="https://picsum.photos/280/180" 
+       alt="Mooie natuur foto"&gt;
+  &lt;figcaption&gt;
+    Dit is een uitleg bij de afbeelding
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;!-- Verschillende afmetingen --&gt;
+&lt;figure&gt;
+  &lt;img src="https://picsum.photos/400/300" 
+       alt="Landscape foto"&gt;
+  &lt;figcaption&gt;400x300 pixels&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+        </div>
+        <details class="hint">
+          <summary>Simpele Uitleg</summary>
+          <ul>
+            <li><strong>figure</strong>: Container voor afbeelding + uitleg</li>
+            <li><strong>img</strong>: De afbeelding zelf</li>
+            <li><strong>figcaption</strong>: Tekst onder de afbeelding</li>
+            <li><strong>picsum.photos</strong>: Gratis service voor willekeurige foto's</li>
+            <li><strong>280/180</strong>: Breedte/hoogte in pixels</li>
+          </ul>
         </details>
       </article>
-    </section>
 
     <!-- GRID -->
     <section id="grid" class="panel" data-search="grid columns rows repeat fr minmax auto-fit auto-fill gap">

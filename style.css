@@ -143,7 +143,33 @@ h3{ font-size: 1.2rem; margin: 0 0 8px; color: #cfe4ff; }
 .demo-heading{ font-size: 1.2rem !important; margin: 4px 0 !important; }
 .demo-link{ color: var(--c-accent); text-decoration: underline; }
 .demo-img{ border-radius: 4px; margin-top: 8px; }
-/* ====== LINKS & IMAGES DEMO ====== */
+/* ====== FIGURE DEMO ====== */
+.figure-demo-container{
+  text-align: center; padding: 20px;
+  background: rgba(0,0,0,.1); border-radius: 12px;
+}
+
+.demo-figure{
+  margin: 0; display: inline-block;
+  background: rgba(255,255,255,.05);
+  border: 2px solid rgba(255,255,255,.1);
+  border-radius: 12px; padding: 12px; margin-bottom: 16px;
+}
+
+.figure-demo-img{
+  width: 100%; max-width: 280px; height: 180px;
+  border-radius: 8px; object-fit: cover;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,.3);
+}
+.figure-demo-img:hover{
+  transform: scale(1.03);
+}
+
+.figure-demo-caption{
+  color: var(--c-dim); font-size: 0.9rem; margin-top: 8px;
+  font-style: italic; text-align: center;
+}
 .links-images-demo{
   text-align: center; padding: 16px;
   background: rgba(0,0,0,.1); border-radius: 12px;
@@ -494,33 +520,52 @@ h3{ font-size: 1.2rem; margin: 0 0 8px; color: #cfe4ff; }
   border: 1px solid rgba(255,255,255,.06);
 }
 
-/* Langzaam blinkende hint */
+/* Neon glow hint met blinkend effect */
 details.hint summary {
     cursor: pointer;
     font-weight: bold;
     font-size: 1.1rem;
-    color: #00aeff; /* opvallende kleur */
+    color: #00e5ff; /* basis neon kleur */
     background: rgba(35, 24, 156, 0.544);
     padding: 6px 10px;
     border-radius: 6px;
     display: inline-block;
-    transition: background 0.5s;
-    
-    /* Blink animatie toevoegen */
-    animation: slow-blink 4s ease-in-out infinite;
+
+    /* Animatie voor glow + blink */
+    animation: neon-blink 2s ease-in-out infinite alternate;
 }
 
-@keyframes slow-blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+@keyframes neon-blink {
+    0% {
+        color: #00e5ff;
+        text-shadow:
+            0 0 5px #00e5ff,
+            0 0 10px #00e5ff,
+            0 0 20px #00e5ff,
+            0 0 40px #00e5ff;
+    }
+    50% {
+        color: #80ffff; /* lichtere tint voor "oplichten" */
+        text-shadow:
+            0 0 10px #e680ff,
+            0 0 20px #e680ff,
+            0 0 30px #e680ff,
+            0 0 60px #e680ff;
+    }
+    100% {
+        color: #00e5ff;
+        text-shadow:
+            0 0 5px #00e5ff,
+            0 0 10px #00e5ff,
+            0 0 20px #00e5ff,
+            0 0 40px #00e5ff;
+    }
 }
 
 details.hint summary:hover {
-    background: #003cff;
-    color: white;
-    /* Animatie blijft actief tijdens hover */
+    background: #157921;
+    color: rgb(233, 223, 43);
 }
-
 /* ====== UTILITY CLASSES ====== */
 .hidden{ display: none !important; }
 .invisible{ visibility: hidden !important; }

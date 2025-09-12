@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HTML & CSS</title>
+  <title>HTML & CSS - Complete Cheatsheet</title>
+  <meta name="description" content="Complete HTML & CSS cheatsheet met interactieve voorbeelden">
 
-  <!-- Google Fonts voor “game/tech” look -->
+  <!-- Google Fonts voor "game/tech" look -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -15,30 +16,33 @@
   <nav class="navbar glass">
     <div class="nav-inner">
       <div class="brand">Vishal<span>_T©</span></div>
-      <input id="search" type="search" placeholder="Zoek: tags, css, flex, grid, img, link, tabel..." aria-label="Zoek in de cheatsheet" />
+      <input id="search" type="search" placeholder="Zoek: selectors, units, colors, flex, grid..." aria-label="Zoek in de cheatsheet" />
       <button id="menuBtn" class="menu-btn" aria-label="Menu">&#9776;</button>
       <ul id="menu" class="menu">
         <li><a href="#intro">Intro</a></li>
-        <li><a href="#html">HTML Tags</a></li>
-        <li><a href="#links-images">Links & Afbeeldingen</a></li>
-        <li><a href="#text">Tekst & Typografie</a></li>
+        <li><a href="#html-basics">HTML Basics</a></li>
+        <li><a href="#css-selectors">CSS Selectors</a></li>
+        <li><a href="#css-units">Units & Colors</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#display-layout">Display & Layout</a></li>
+        <li><a href="#visual-styling">Visual Styling</a></li>
         <li><a href="#flex">Flexbox</a></li>
         <li><a href="#grid">CSS Grid</a></li>
-        <li><a href="#boxmodel">Spacing & Box-model</a></li>
         <li><a href="#position">Position</a></li>
+        <li><a href="#animations">Animations</a></li>
         <li><a href="#forms">Formulieren</a></li>
-        <li><a href="#mediaqueries">Media Queries</a></li>
+        <li><a href="#responsive">Responsive</a></li>
       </ul>
     </div>
   </nav>
 
   <main class="container">
     <!-- INTRO -->
-    <section id="intro" class="panel neon-border" data-search="intro uitleg overzicht cheatsheet html css flexbox grid img link url beginner">
-      <h1>HTML & CSS</h1>
+    <section id="intro" class="panel neon-border" data-search="intro uitleg overzicht cheatsheet html css complete guide beginner">
+      <h1>Complete HTML & CSS Cheatsheet</h1>
       <p class="lead">
-        Met voorbeelden, knoppen om live te spelen met instellingen, en korte uitleg.
-        Gebruik de zoekbalk hierboven om snel te filteren.
+        Van basis HTML tot geavanceerde CSS - met interactieve voorbeelden en live demos.
+        Gebruik de zoekbalk om snel te vinden wat je zoekt.
       </p>
       <div class="legend">
         <span class="chip chip-html">&lt;HTML&gt;</span>
@@ -48,198 +52,625 @@
       </div>
     </section>
 
-<!-- HTML TAGS -->
-<section id="html" class="panel" data-search="html tags basis headings paragrafen lists lijsten tabel table strong em code pre div span structuur">
-  <h2>HTML Basis Tags</h2>
+    <!-- HTML BASICS -->
+    <section id="html-basics" class="panel" data-search="html document structure head body meta viewport semantiek accessibility comments">
+      <h2>HTML Fundamentals</h2>
 
-  <!-- LINKS & IMAGES -->
-    <section id="links-images" class="panel" data-search="a anchor link url href target rel noopener noreferrer img afbeelding alt width height figure figcaption">
-      <h2>Links & Afbeeldingen (URL &lt;a&gt; en &lt;img&gt;)</h2>
-
+      <!-- Document Structure -->
       <article class="card">
-        <header><span class="chip chip-html">&lt;HTML&gt;</span> Link (URL)</header>
+        <header><span class="chip chip-html">&lt;HTML&gt;</span> Document Structuur</header>
         <p>
-          Gebruik <code>&lt;a href="URL"&gt;</code> voor hyperlinks. 
-          <code>target="_blank"</code> = nieuw tabblad. Voeg <code>rel="noopener"</code> toe voor veiligheid.
+          Elke HTML-pagina heeft een vaste structuur met belangrijke meta-informatie in de <code>&lt;head&gt;</code>.
         </p>
         <div class="demo">
           <div class="demo-left">
-            <p><a class="btn-link" href="https://example.com" target="_blank" rel="noopener">Ga naar example.com</a></p>
+            <p><strong>Complete HTML document:</strong></p>
+            <ul class="t-small">
+              <li>DOCTYPE = HTML5 versie</li>
+              <li>lang = taal voor screenreaders</li>
+              <li>charset = karakterset (UTF-8)</li>
+              <li>viewport = responsief design</li>
+            </ul>
           </div>
-          <pre class="code"><code>&lt;a href="https://example.com" target="_blank" rel="noopener"&gt;
-  Ga naar example.com
-&lt;/a&gt;</code></pre>
+          <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="nl"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta name="description" content="Pagina beschrijving voor SEO"&gt;
+    &lt;title&gt;Pagina Titel&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Dit is een HTML comment --&gt;
+    &lt;h1&gt;Hoofdinhoud&lt;/h1&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
         </div>
       </article>
 
+      <!-- Semantic HTML -->
       <article class="card">
-  <header><span class="chip chip-html">&lt;HTML&gt;</span> Afbeelding met caption</header>
-  <p>
-    Gebruik <code>&lt;figure&gt;</code> voor een afbeelding met uitleg (<code>&lt;figcaption&gt;</code>).  
-    <code>alt</code> is belangrijk voor toegankelijkheid.
-  </p>
-  <div class="demo t-center">
-    <figure class="figure">
-      <img src="https://picsum.photos/300/180" alt="Voorbeeld landschap">
-      <figcaption>Korte uitleg bij de afbeelding</figcaption>
-    </figure>
-  </div>
-  <pre class="code"><code>&lt;figure&gt;
-  &lt;img src="https://picsum.photos/300/180" alt="Voorbeeld landschap"&gt;
-  &lt;figcaption&gt;Korte uitleg bij de afbeelding&lt;/figcaption&gt;
-&lt;/figure&gt;</code></pre>
-</article>
+        <header><span class="chip chip-html">&lt;HTML&gt;</span> Semantische Structuur</header>
+        <p>
+          Gebruik betekenisvolle tags in plaats van alleen <code>&lt;div&gt;</code>. Dit helpt screenreaders en SEO.
+        </p>
+        <div class="demo">
+          <div class="demo-left">
+            <header class="semantic-demo">Header (logo, nav)</header>
+            <main class="semantic-demo">
+              <article class="semantic-demo">Article (blog post)</article>
+              <aside class="semantic-demo">Aside (sidebar)</aside>
+            </main>
+            <footer class="semantic-demo">Footer (contact)</footer>
+          </div>
+          <pre class="code"><code>&lt;header&gt;
+  &lt;nav&gt;...navigatie...&lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;h1&gt;Artikeltitel&lt;/h1&gt;
+    &lt;section&gt;...inhoud...&lt;/section&gt;
+  &lt;/article&gt;
+  
+  &lt;aside&gt;
+    &lt;h2&gt;Gerelateerd&lt;/h2&gt;
+  &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;...copyright...&lt;/footer&gt;</code></pre>
+        </div>
+      </article>
+
+      <!-- HTML Elements Overview -->
+      <article class="card">
+        <header><span class="chip chip-html">&lt;HTML&gt;</span> Belangrijkste Tags</header>
+        <div class="demo">
+          <div class="demo-left">
+            <h3>Koppen</h3>
+            <h1 class="demo-heading">H1 - Hoofdtitel</h1>
+            <h2 class="demo-heading">H2 - Sectietitel</h2>
+            <h3 class="demo-heading">H3 - Subsectie</h3>
+            
+            <h3>Tekst</h3>
+            <p>Paragraaf met <strong>belangrijke tekst</strong> en <em>nadruk</em>.</p>
+            <p><code>Code inline</code> en <mark>gemarkeerde tekst</mark>.</p>
+            
+            <h3>Lijsten</h3>
+            <ul><li>Ongeordende lijst</li></ul>
+            <ol><li>Geordende lijst</li></ol>
+            
+            <h3>Links & Media</h3>
+            <a href="#" class="demo-link">Link naar pagina</a><br>
+            <img src="https://picsum.photos/100/60" alt="Demo afbeelding" class="demo-img">
+          </div>
+          <pre class="code"><code>&lt;!-- Koppen --&gt;
+&lt;h1&gt;Hoofdtitel&lt;/h1&gt;
+&lt;h2&gt;Sectietitel&lt;/h2&gt;
+
+&lt;!-- Tekst formatteren --&gt;
+&lt;p&gt;Paragraaf met &lt;strong&gt;vet&lt;/strong&gt; en &lt;em&gt;cursief&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Inline code&lt;/code&gt; en &lt;mark&gt;highlight&lt;/mark&gt;.&lt;/p&gt;
+
+&lt;!-- Lijsten --&gt;
+&lt;ul&gt;&lt;li&gt;Punt 1&lt;/li&gt;&lt;/ul&gt;
+&lt;ol&gt;&lt;li&gt;Stap 1&lt;/li&gt;&lt;/ol&gt;
+
+&lt;!-- Links en media --&gt;
+&lt;a href="pagina.html"&gt;Link tekst&lt;/a&gt;
+&lt;img src="foto.jpg" alt="Beschrijving"&gt;</code></pre>
+        </div>
+      </article>
     </section>
 
-  <!-- Document structuur -->
-  <article class="card">
-    <header><span class="chip chip-html">&lt;HTML&gt;</span> Document</header>
-    <p>
-      Een HTML-pagina bestaat altijd uit 3 grote delen:  
-      - <code>&lt;head&gt;</code>: hier staat de titel en instellingen.  
-      - <code>&lt;body&gt;</code>: hier komt de inhoud die je ziet.  
-    </p>
-    <div class="demo">
-      <div class="demo-left">
-        <p><strong>Voorbeeld van een simpele pagina:</strong></p>
-      </div>
-      <pre class="code"><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="nl"&gt;
-  &lt;head&gt;
-    &lt;title&gt;Mijn pagina&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;Welkom!&lt;/h1&gt;
-    &lt;p&gt;Dit is de inhoud.&lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-    </div>
-  </article>
+    <!-- CSS SELECTORS -->
+    <section id="css-selectors" class="panel" data-search="css selectors class id element pseudo-classes hover nth-child descendant specificity">
+      <h2>CSS Selectors</h2>
 
-  <!-- Koppen & Paragrafen -->
-  <article class="card">
-    <header><span class="chip chip-html">&lt;HTML&gt;</span> Koppen & Tekst</header>
-    <p>
-      Gebruik <code>&lt;h1&gt;</code> t/m <code>&lt;h6&gt;</code> voor titels.  
-      <code>&lt;p&gt;</code> is voor normale tekst.  
-      <code>&lt;strong&gt;</code> maakt tekst vet en belangrijk.  
-      <code>&lt;em&gt;</code> geeft nadruk (schuin).  
-    </p>
-    <div class="demo">
-      <div class="demo-left">
-        <h1>H1 Titel</h1>
-        <h2>H2 Subtitel</h2>
-        <p>Een <strong>belangrijke</strong> zin met <em>nadruk</em>.</p>
-      </div>
-      <pre class="code"><code>&lt;h1&gt;H1 Titel&lt;/h1&gt;
-&lt;h2&gt;H2 Subtitel&lt;/h2&gt;
-&lt;p&gt;Een &lt;strong&gt;belangrijke&lt;/strong&gt; zin met &lt;em&gt;nadruk&lt;/em&gt;.&lt;/p&gt;</code></pre>
-    </div>
-  </article>
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span><span class="chip chip-demo">DEMO</span> Basis Selectors</header>
+        <p>CSS selectors bepalen op welke HTML elementen je styles toepast.</p>
+        
+        <div class="controls">
+          <label>Kies selector type:
+            <select id="selector-demo">
+              <option value="element">Element (h3)</option>
+              <option value="class">Class (.demo-box)</option>
+              <option value="id">ID (#special)</option>
+              <option value="descendant">Descendant (div p)</option>
+              <option value="hover">Pseudo (:hover)</option>
+            </select>
+          </label>
+        </div>
 
-  <!-- Lijsten -->
-  <article class="card">
-    <header><span class="chip chip-html">&lt;HTML&gt;</span> Lijsten</header>
-    <p>
-      <code>&lt;ul&gt;</code> = lijst met bolletjes (ongeordend).  
-      <code>&lt;ol&gt;</code> = lijst met nummers (geordend).  
-      Items staan in <code>&lt;li&gt;</code>.  
-    </p>
-    <div class="demo">
-      <div class="demo-left">
-        <ul>
-          <li>Punt 1</li>
-          <li>Punt 2</li>
-        </ul>
-        <ol>
-          <li>Stap 1</li>
-          <li>Stap 2</li>
-        </ol>
-      </div>
-      <pre class="code"><code>&lt;ul&gt;
-  &lt;li&gt;Punt 1&lt;/li&gt;
-  &lt;li&gt;Punt 2&lt;/li&gt;
-&lt;/ul&gt;
+        <div class="demo two-col">
+          <div class="demo-left">
+            <div class="selector-playground">
+              <h3 class="demo-element">H3 Element</h3>
+              <p class="demo-box">Class selector voorbeeld</p>
+              <p id="special" class="demo-box">ID selector voorbeeld</p>
+              <div class="demo-container">
+                <p class="demo-nested">Nested paragraph</p>
+              </div>
+              <button class="demo-button">Hover over me</button>
+            </div>
+          </div>
+          <div id="selector-code" class="code-container">
+            <pre class="code"><code>/* Element selector */
+h3 { color: cyan; }
 
-&lt;ol&gt;
-  &lt;li&gt;Stap 1&lt;/li&gt;
-  &lt;li&gt;Stap 2&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
-    </div>
-  </article>
+/* Class selector */
+.demo-box { background: #1a3564; }
 
-  <!-- Div & Span -->
-  <article class="card">
-    <header><span class="chip chip-html">&lt;HTML&gt;</span> Extra containers</header>
-    <p>
-      - <code>&lt;div&gt;</code> gebruik je om een blok te maken.  
-      - <code>&lt;span&gt;</code> gebruik je om een stukje tekst te markeren.  
-    </p>
-    <div class="demo">
-      <div class="demo-left">
-        <div style="border:1px solid #ccc; padding:5px;">Dit is een div</div>
-        <p>Tekst met <span style="color:red;">rode span</span>.</p>
-      </div>
-      <pre class="code"><code>&lt;div&gt;Dit is een div&lt;/div&gt;
-&lt;p&gt;Tekst met &lt;span&gt;rode span&lt;/span&gt;.&lt;/p&gt;</code></pre>
-    </div>
-  </article>
+/* ID selector */
+#special { border: 2px solid gold; }
 
-  <!-- Pagina-indeling -->
-  <article class="card">
-    <header><span class="chip chip-html">&lt;HTML&gt;</span> Pagina indeling</header>
-    <p>
-      Deze tags geven structuur aan je website:  
-      - <code>&lt;header&gt;</code> = bovenkant (titel/logo)  
-      - <code>&lt;nav&gt;</code> = menu met links  
-      - <code>&lt;section&gt;</code> = een deel van de inhoud  
-      - <code>&lt;article&gt;</code> = zelfstandig stuk tekst of bericht  
-      - <code>&lt;footer&gt;</code> = onderkant (contact, copyright)  
-    </p>
-    <div class="demo">
-      <div class="demo-left">
-        <header>Dit is de bovenkant</header>
-        <nav>Menu</nav>
-        <section>Hoofdcontent</section>
-        <footer>Onderkant</footer>
-      </div>
-      <pre class="code"><code>&lt;header&gt;Bovenkant&lt;/header&gt;
-&lt;nav&gt;Menu&lt;/nav&gt;
-&lt;section&gt;Hoofdcontent&lt;/section&gt;
-&lt;footer&gt;Onderkant&lt;/footer&gt;</code></pre>
-    </div>
-  </article>
+/* Descendant selector */
+div p { font-weight: bold; }
 
-  <!-- Tabel -->
-  <article class="card">
-    <header><span class="chip chip-html">&lt;HTML&gt;</span> Tabel</header>
-    <p>
-      Met <code>&lt;table&gt;</code> maak je tabellen.  
-      - <code>&lt;thead&gt;</code> = kop van de tabel.  
-      - <code>&lt;tbody&gt;</code> = de rijen met inhoud.  
-    </p>
-    <div class="demo">
-      <div class="demo-left">
-        <table class="table">
-          <thead><tr><th>Naam</th><th>Score</th></tr></thead>
-          <tbody>
-            <tr><td>Alex</td><td>95</td></tr>
-            <tr><td>Sam</td><td>88</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <pre class="code"><code>&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;&lt;th&gt;Naam&lt;/th&gt;&lt;th&gt;Score&lt;/th&gt;&lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;&lt;td&gt;Alex&lt;/td&gt;&lt;td&gt;95&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;&lt;td&gt;Sam&lt;/td&gt;&lt;td&gt;88&lt;/td&gt;&lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
-    </div>
-  </article>
-</section>
+/* Pseudo-class */
+button:hover { transform: scale(1.05); }</code></pre>
+          </div>
+        </div>
+
+        <details class="hint">
+          <summary>Selector Uitleg</summary>
+          <ul>
+            <li><strong>Element</strong>: <code>h1, p, div</code> - selecteert alle elementen van dat type</li>
+            <li><strong>Class</strong>: <code>.klasnaam</code> - selecteert elementen met <code>class="klasnaam"</code></li>
+            <li><strong>ID</strong>: <code>#idnaam</code> - selecteert element met <code>id="idnaam"</code> (uniek per pagina)</li>
+            <li><strong>Descendant</strong>: <code>div p</code> - selecteert alle <code>&lt;p&gt;</code> binnen <code>&lt;div&gt;</code></li>
+            <li><strong>Pseudo-classes</strong>: <code>:hover, :focus, :nth-child(2)</code> - speciale states</li>
+          </ul>
+        </details>
+      </article>
+
+      <!-- Advanced Selectors -->
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span> Geavanceerde Selectors</header>
+        <div class="demo">
+          <div class="demo-left">
+            <div class="advanced-selector-demo">
+              <p class="first-para">Eerste paragraaf</p>
+              <p>Tweede paragraaf</p>
+              <p class="last-para">Laatste paragraaf</p>
+              <input type="text" placeholder="Focus me">
+              <div class="parent">
+                <span class="child">Direct child</span>
+              </div>
+            </div>
+          </div>
+          <pre class="code"><code>/* Eerste/laatste child */
+p:first-child { color: #7aff9c; }
+p:last-child { color: #ff4267; }
+
+/* nth-child patterns */
+li:nth-child(odd) { background: #1a3564; }
+li:nth-child(3n) { font-weight: bold; }
+
+/* State selectors */
+input:focus { border-color: cyan; }
+button:active { transform: scale(0.95); }
+
+/* Direct child (>) vs descendant ( ) */
+.parent > .child { margin: 10px; }
+.parent .child { padding: 5px; }
+
+/* Attribute selectors */
+input[type="email"] { border-color: blue; }
+a[target="_blank"] { color: orange; }</code></pre>
+        </div>
+      </article>
+    </section>
+
+    <!-- CSS UNITS & COLORS -->
+    <section id="css-units" class="panel" data-search="css units px rem em percent vh vw colors hex rgb hsl rgba hsla">
+      <h2>CSS Units & Colors</h2>
+
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span><span class="chip chip-demo">DEMO</span> Size Units</header>
+        <p>Verschillende units voor afmetingen en hun gebruik.</p>
+        
+        <div class="controls">
+          <label>Unit type:
+            <select id="unit-demo">
+              <option value="px">px (pixels)</option>
+              <option value="rem">rem (relative to root)</option>
+              <option value="em">em (relative to parent)</option>
+              <option value="percent">% (percentage)</option>
+              <option value="vw">vw (viewport width)</option>
+              <option value="vh">vh (viewport height)</option>
+            </select>
+          </label>
+          <label>Waarde:
+            <input id="unit-value" type="number" value="16" min="1" max="100">
+          </label>
+        </div>
+
+        <div class="demo">
+          <div class="demo-left">
+            <div class="unit-container">
+              <div id="unit-box" class="unit-demo-box">
+                <span id="unit-text">Demo Box</span>
+              </div>
+              <p class="unit-info" id="unit-info">16px = vaste grootte in pixels</p>
+            </div>
+          </div>
+          <pre class="code"><code>/* Absolute units */
+width: 100px;    /* Vaste pixels */
+
+/* Relative units */
+font-size: 1.2rem;   /* 1.2 × root font-size */
+padding: 2em;        /* 2 × huidige font-size */
+width: 50%;          /* 50% van parent */
+
+/* Viewport units */
+width: 100vw;        /* 100% van viewport breedte */
+height: 100vh;       /* 100% van viewport hoogte */
+font-size: 4vmin;    /* 4% van kleinste viewport dimensie */
+
+/* Modern units */
+gap: clamp(1rem, 5vw, 3rem);  /* Min, preferred, max */</code></pre>
+        </div>
+
+        <details class="hint">
+          <summary>Unit Guidelines</summary>
+          <ul>
+            <li><strong>px</strong>: Voor borders, kleine details, pixel-perfect design</li>
+            <li><strong>rem</strong>: Voor font-sizes, spacing (schaalbaar)</li>
+            <li><strong>em</strong>: Voor padding/margin relatief aan tekst</li>
+            <li><strong>%</strong>: Voor layout widths, responsive containers</li>
+            <li><strong>vw/vh</strong>: Voor full-screen sections, responsive typography</li>
+          </ul>
+        </details>
+      </article>
+
+      <!-- Colors -->
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span><span class="chip chip-demo">DEMO</span> Color Systems</header>
+        <div class="controls">
+          <label>Color format:
+            <select id="color-demo">
+              <option value="hex">Hex (#ff6b35)</option>
+              <option value="rgb">RGB (255, 107, 53)</option>
+              <option value="hsl">HSL (16°, 100%, 60%)</option>
+              <option value="rgba">RGBA (met transparantie)</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="demo two-col">
+          <div class="demo-left">
+            <div class="color-showcase">
+              <div id="color-box" class="color-demo-box"></div>
+              <div class="color-info">
+                <p id="color-value">#ff6b35</p>
+                <p id="color-description">Warme oranje kleur</p>
+              </div>
+            </div>
+          </div>
+          <pre class="code"><code>/* Hex colors */
+color: #ff6b35;      /* Oranje */
+color: #fff;         /* Wit (korte notatie) */
+
+/* RGB colors */
+color: rgb(255, 107, 53);        /* Oranje */
+background: rgba(255, 107, 53, 0.5);  /* 50% transparant */
+
+/* HSL colors (Hue, Saturation, Lightness) */
+color: hsl(16, 100%, 60%);       /* Oranje */
+color: hsla(16, 100%, 60%, 0.8); /* Met alpha */
+
+/* CSS Custom Properties (variables) */
+:root { --primary: #ff6b35; }
+color: var(--primary);
+
+/* System colors */
+color: currentColor;   /* Erft parent color */</code></pre>
+        </div>
+      </article>
+    </section>
+
+    <!-- TYPOGRAPHY -->
+    <section id="typography" class="panel" data-search="typography font-size font-weight line-height text-align letter-spacing font-family web fonts google fonts">
+      <h2>Typography</h2>
+
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span><span class="chip chip-demo">DEMO</span> Font Properties</header>
+        
+        <div class="controls">
+          <label>Font Size:
+            <input id="typo-size" type="range" min="12" max="48" value="18">
+            <span id="typo-size-val">18px</span>
+          </label>
+          <label>Font Weight:
+            <select id="typo-weight">
+              <option value="300">Light (300)</option>
+              <option value="400" selected>Normal (400)</option>
+              <option value="600">Semi-bold (600)</option>
+              <option value="700">Bold (700)</option>
+            </select>
+          </label>
+          <label>Line Height:
+            <input id="typo-line" type="range" min="1" max="2.5" step="0.1" value="1.4">
+            <span id="typo-line-val">1.4</span>
+          </label>
+          <label>Letter Spacing:
+            <input id="typo-spacing" type="range" min="-2" max="5" step="0.1" value="0">
+            <span id="typo-spacing-val">0px</span>
+          </label>
+        </div>
+
+        <div class="demo">
+          <div class="demo-left">
+            <p id="typo-demo" class="typography-demo">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <pre class="code"><code>/* Font basics */
+font-family: 'Roboto', Arial, sans-serif;
+font-size: 18px;
+font-weight: 400;
+line-height: 1.4;
+letter-spacing: 0px;
+
+/* Text alignment */
+text-align: left | center | right | justify;
+
+/* Text decoration */
+text-decoration: underline | line-through | none;
+text-transform: uppercase | lowercase | capitalize;
+
+/* Advanced typography */
+font-variant: small-caps;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+word-spacing: 2px;</code></pre>
+        </div>
+      </article>
+
+      <!-- Web Fonts -->
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span> Web Fonts</header>
+        <div class="demo">
+          <div class="demo-left">
+            <p style="font-family: 'Orbitron', monospace;">Orbitron - Futuristic</p>
+            <p style="font-family: 'Rajdhani', sans-serif;">Rajdhani - Modern</p>
+            <p style="font-family: Georgia, serif;">Georgia - Serif</p>
+            <p style="font-family: 'Courier New', monospace;">Courier - Monospace</p>
+          </div>
+          <pre class="code"><code>/* Google Fonts in HTML head */
+&lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"&gt;
+
+/* CSS @import (not recommended for performance) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+/* Font stack (fallbacks) */
+font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+
+/* Generic families */
+font-family: serif;      /* Times, Georgia */
+font-family: sans-serif; /* Arial, Helvetica */
+font-family: monospace;  /* Courier, Monaco */
+font-family: cursive;    /* Comic Sans, handwriting */
+font-family: fantasy;    /* Decorative fonts */</code></pre>
+        </div>
+      </article>
+    </section>
+
+    <!-- DISPLAY & LAYOUT -->
+    <section id="display-layout" class="panel" data-search="display block inline inline-block none flex grid float overflow visibility opacity">
+      <h2>Display & Layout</h2>
+
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span><span class="chip chip-demo">DEMO</span> Display Types</header>
+        
+        <div class="controls">
+          <label>Display waarde:
+            <select id="display-demo">
+              <option value="block">block</option>
+              <option value="inline">inline</option>
+              <option value="inline-block">inline-block</option>
+              <option value="none">none</option>
+              <option value="flex">flex</option>
+              <option value="grid">grid</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="demo">
+          <div class="demo-left">
+            <div class="display-container">
+              <div class="display-context">Voor element</div>
+              <div id="display-box" class="display-demo-box">Demo Element</div>
+              <div class="display-context">Na element</div>
+            </div>
+          </div>
+          <pre class="code"><code>/* Block elements (nemen volle breedte) */
+display: block;     /* div, h1, p standaard */
+
+/* Inline elements (in tekstflow) */
+display: inline;    /* span, a, strong standaard */
+
+/* Inline-block (inline maar met block properties) */
+display: inline-block;  /* afbeeldingen, buttons */
+
+/* Hide elements */
+display: none;           /* Element bestaat niet */
+visibility: hidden;      /* Element neemt ruimte maar onzichtbaar */
+opacity: 0;             /* Transparant maar interactief */
+
+/* Layout systems */
+display: flex;      /* Flexbox container */
+display: grid;      /* CSS Grid container */</code></pre>
+        </div>
+
+        <details class="hint">
+          <summary>Display Types Uitleg</summary>
+          <ul>
+            <li><strong>block</strong>: Neemt volle breedte, nieuwe regel voor en na</li>
+            <li><strong>inline</strong>: Alleen zo breed als inhoud, geen nieuwe regel</li>
+            <li><strong>inline-block</strong>: Inline flow maar met block afmetingen</li>
+            <li><strong>none</strong>: Element verdwijnt volledig uit layout</li>
+          </ul>
+        </details>
+      </article>
+
+      <!-- Overflow -->
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span><span class="chip chip-demo">DEMO</span> Overflow</header>
+        
+        <div class="controls">
+          <label>Overflow:
+            <select id="overflow-demo">
+              <option value="visible">visible</option>
+              <option value="hidden">hidden</option>
+              <option value="scroll">scroll</option>
+              <option value="auto">auto</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="demo two-col">
+          <div class="demo-left">
+            <div id="overflow-container" class="overflow-demo-container">
+              <div class="overflow-content">
+                Dit is veel tekst die niet past in de container. 
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. 
+                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam quis nostrud exercitation.
+              </div>
+            </div>
+          </div>
+          <pre class="code"><code>/* Overflow control */
+overflow: visible;    /* Inhoud valt buiten container (standaard) */
+overflow: hidden;     /* Knip inhoud af */
+overflow: scroll;     /* Toon altijd scrollbars */
+overflow: auto;       /* Scrollbars alleen als nodig */
+
+/* Per richting */
+overflow-x: hidden;   /* Horizontaal */
+overflow-y: scroll;   /* Verticaal */
+
+/* Text overflow */
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;  /* Toont ... */</code></pre>
+        </div>
+      </article>
+    </section>
+
+    <!-- VISUAL STYLING -->
+    <section id="visual-styling" class="panel" data-search="borders background colors shadows transitions transforms visual styling border-radius">
+      <h2>Visual Styling</h2>
+
+      <!-- Borders -->
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span><span class="chip chip-demo">DEMO</span> Borders & Backgrounds</header>
+        
+        <div class="controls">
+          <label>Border Width:
+            <input id="border-width" type="range" min="0" max="10" value="2">
+            <span id="border-width-val">2px</span>
+          </label>
+          <label>Border Style:
+            <select id="border-style">
+              <option value="solid">solid</option>
+              <option value="dashed">dashed</option>
+              <option value="dotted">dotted</option>
+              <option value="double">double</option>
+            </select>
+          </label>
+          <label>Border Radius:
+            <input id="border-radius" type="range" min="0" max="50" value="10">
+            <span id="border-radius-val">10px</span>
+          </label>
+        </div>
+
+        <div class="demo two-col">
+          <div class="demo-left">
+            <div id="border-demo" class="border-demo-box">
+              Border Demo Box
+            </div>
+          </div>
+          <pre class="code"><code>/* Border shorthand */
+border: 2px solid #00e5ff;
+
+/* Individual properties */
+border-width: 2px;
+border-style: solid;
+border-color: #00e5ff;
+
+/* Per side */
+border-top: 1px solid red;
+border-right: 2px dashed blue;
+
+/* Border radius */
+border-radius: 10px;           /* Alle hoeken */
+border-radius: 10px 20px;      /* Top/bottom, left/right */
+border-radius: 5px 10px 15px 20px;  /* Elk hoek apart */
+
+/* Backgrounds */
+background-color: #1a3564;
+background-image: url('image.jpg');
+background-size: cover | contain | 100px 50px;
+background-position: center | top left | 50% 50%;
+background-repeat: no-repeat | repeat-x | repeat-y;</code></pre>
+        </div>
+      </article>
+
+      <!-- Shadows & Effects -->
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span><span class="chip chip-demo">DEMO</span> Shadows & Effects</header>
+        
+        <div class="controls">
+          <label>Shadow X:
+            <input id="shadow-x" type="range" min="-20" max="20" value="4">
+          </label>
+          <label>Shadow Y:
+            <input id="shadow-y" type="range" min="-20" max="20" value="4">
+          </label>
+          <label>Shadow Blur:
+            <input id="shadow-blur" type="range" min="0" max="30" value="8">
+          </label>
+          <label>Shadow Opacity:
+            <input id="shadow-opacity" type="range" min="0" max="1" step="0.1" value="0.3">
+          </label>
+        </div>
+
+        <div class="demo two-col">
+          <div class="demo-left">
+            <div id="shadow-demo" class="shadow-demo-box">
+              Shadow Demo
+            </div>
+            <div class="effects-showcase">
+              <div class="effect-box transform-demo">Transform</div>
+              <div class="effect-box filter-demo">Filter</div>
+            </div>
+          </div>
+          <pre class="code"><code>/* Box shadows */
+box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 20px #00e5ff, inset 0 0 10px rgba(255,255,255,0.1);
+
+/* Text shadows */
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+/* Transforms */
+transform: rotate(45deg);
+transform: scale(1.2);
+transform: translate(10px, 20px);
+transform: rotate(45deg) scale(1.2);  /* Multiple transforms */
+
+/* Filters */
+filter: blur(2px);
+filter: brightness(1.5);
+filter: drop-shadow(0 0 10px #00e5ff);</code></pre>
+        </div>
+      </article>
+    </section>
+
     <!-- FLEXBOX -->
     <section id="flex" class="panel" data-search="flexbox display flex-direction row column justify-content align-items center start end space-between space-around wrap gap grow shrink basis">
       <h2>Flexbox</h2>
@@ -393,27 +824,6 @@
       </article>
     </section>
 
-    <!-- SPACING & BOX MODEL -->
-    <section id="boxmodel" class="panel" data-search="margin padding border box shadow">
-      <h2>Spacing & Box-model</h2>
-
-      <article class="card">
-        <header><span class="chip chip-css">{CSS}</span> margin vs padding</header>
-        <div class="demo two-col">
-          <div>
-            <div class="box margin-demo">
-                <strong>Margin:</strong> ruimte **buiten** het vakje, tussen dit vakje en andere vakjes / elementen (bijvoorbeeld 16px)
-                </div>
-                <div class="box padding-demo">
-                <strong>Padding:</strong> ruimte **binnen** het vakje, tussen de rand van het vakje en de inhoud erin (bijvoorbeeld 16px)
-            </div>
-          </div>
-          <pre class="code"><code>.margin-demo { margin: 16px; }
-.padding-demo{ padding: 16px; }</code></pre>
-        </div>
-      </article>
-    </section>
-
     <!-- POSITION -->
     <section id="position" class="panel" data-search="position static relative absolute fixed sticky top left z-index">
       <h2>Position</h2>
@@ -442,83 +852,133 @@
         <details class="hint">
           <summary>Uitleg</summary>
           <ul>
-  <li><code>relative</code>
-    <ul>
-      <li>Het element zit eerst op zijn normale plek in de pagina.</li>
-      <li>Als je <code>top</code>, <code>left</code>, <code>bottom</code> of <code>right</code> instelt, wordt het daarvanuit verschoven.</li>
-      <li>Andere elementen “zien” het element nog steeds op de oorspronkelijke plek.</li>
-      <li><strong>Voorbeeld:</strong> Je hebt een paragraaf in een blok. Je zet <code>position: relative; top: 10px;</code>. De paragraaf wordt 10px naar beneden geschoven, maar andere tekst doet alsof hij nog op de originele plek staat.</li>
-    </ul>
-  </li>
-  <hr>
-  <li><code>absolute</code>
-    <ul>
-      <li>Het element verplaatst zich helemaal onafhankelijk van de normale flow.</li>
-      <li>Het zoekt naar het dichtstbijzijnde ouder-element dat al een <code>position</code> heeft (<code>relative</code>, <code>absolute</code>, <code>sticky</code>), en wordt daar ten opzichte van geplaatst.</li>
-      <li>Als er geen ouder met <code>position</code> is, wordt het geplaatst ten opzichte van de hele pagina.</li>
-      <li><strong>Voorbeeld:</strong> Een knop in een div. Div heeft <code>position: relative;</code>. Knop heeft <code>position: absolute; top: 0; left: 0;</code>. De knop staat linksboven in die div, niet ergens anders.</li>
-    </ul>
-  </li>
-  <hr>
-  <li><code>fixed</code>
-    <ul>
-      <li>Het element blijft stevig op één plek op het scherm.</li>
-      <li>Scroll je de pagina? Het element beweegt niet mee.</li>
-      <li><strong>Voorbeeld:</strong> Navigatiebalk die altijd bovenaan je scherm blijft, zelfs als je omlaag scrollt.</li>
-    </ul>
-  </li>
-  <hr>
-  <li><code>sticky</code>
-    <ul>
-      <li>Het element gedraagt zich eerst als normaal (zoals <code>relative</code>).</li>
-      <li>Zodra je scrolt en het element een bepaalde positie bereikt, plakt het vast totdat het uit zijn container valt.</li>
-      <li><strong>Voorbeeld:</strong> Een koptekst in een sectie: hij beweegt mee tot je bij het einde van die sectie komt, dan blijft hij daar “plakken”.</li>
-    </ul>
-  </li>
+  <li><code>relative</code>: Het element zit eerst op zijn normale plek, dan verschuift het daarvanaf.</li>
+  <li><code>absolute</code>: Het element verplaatst zich ten opzichte van het dichtstbijzijnde ouder-element met position.</li>
+  <li><code>fixed</code>: Het element blijft op een vaste plek op het scherm, ook bij scrollen.</li>
+  <li><code>sticky</code>: Het element beweegt mee tot het een bepaalde positie bereikt, dan blijft het 'plakken'.</li>
 </ul>
+        </details>
+      </article>
+    </section>
 
-<p><strong>Kort gezegd:</strong> <br>
-- <code>relative</code> = verplaats ten opzichte van originele plek.<br>
-- <code>absolute</code> = positie t.o.v. ouder-element.<br>
-- <code>fixed</code> = blijft altijd op scherm.<br>
-- <code>sticky</code> = normaal bewegen, plakt vast bij scroll.</p>
+    <!-- ANIMATIONS & TRANSITIONS -->
+    <section id="animations" class="panel" data-search="transitions animations transform keyframes hover effects">
+      <h2>Transitions & Animations</h2>
+
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span><span class="chip chip-demo">DEMO</span> CSS Transitions</header>
+        
+        <div class="controls">
+          <label>Duration:
+            <select id="transition-duration">
+              <option value="0.2s">Fast (0.2s)</option>
+              <option value="0.5s" selected>Medium (0.5s)</option>
+              <option value="1s">Slow (1s)</option>
+              <option value="2s">Very Slow (2s)</option>
+            </select>
+          </label>
+          <label>Easing:
+            <select id="transition-easing">
+              <option value="ease">ease</option>
+              <option value="ease-in">ease-in</option>
+              <option value="ease-out">ease-out</option>
+              <option value="ease-in-out">ease-in-out</option>
+              <option value="linear">linear</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="demo two-col">
+          <div class="demo-left">
+            <div class="animation-showcase">
+              <button id="transition-demo" class="animation-button">Hover me!</button>
+              <div id="keyframe-demo" class="keyframe-box">CSS Animation</div>
+            </div>
+          </div>
+          <pre class="code"><code>/* Basic transition */
+transition: all 0.3s ease;
+transition: color 0.2s, transform 0.3s ease-in-out;
+
+/* Transition properties */
+transition-property: color, transform;
+transition-duration: 0.3s;
+transition-timing-function: ease-in-out;
+transition-delay: 0.1s;
+
+/* Hover effects */
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* CSS Animations with @keyframes */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.animate {
+  animation: pulse 2s infinite;
+  animation-timing-function: ease-in-out;
+}</code></pre>
+        </div>
+
+        <details class="hint">
+          <summary>Animation Guidelines</summary>
+          <ul>
+            <li><strong>Transitions</strong>: Voor hover effects en state changes</li>
+            <li><strong>Animations</strong>: Voor complexere, herhalende bewegingen</li>
+            <li><strong>Performance</strong>: Animeer transform en opacity voor beste prestaties</li>
+            <li><strong>Accessibility</strong>: Respecteer prefers-reduced-motion</li>
+          </ul>
         </details>
       </article>
     </section>
 
     <!-- FORMS -->
-    <section id="forms" class="panel" data-search="form input label placeholder button checkbox radio select textarea">
+    <section id="forms" class="panel" data-search="form input label placeholder button checkbox radio select textarea validation">
       <h2>Formulieren</h2>
+      
       <article class="card">
-        <header><span class="chip chip-html">&lt;HTML&gt;</span> Basis form</header>
+        <header><span class="chip chip-html">&lt;HTML&gt;</span> Complete Form</header>
         <div class="demo two-col">
           <form class="form">
-            <label>Naam
-              <input type="text" placeholder="Jouw naam" />
+            <label>Naam (verplicht)
+              <input type="text" placeholder="Jouw naam" required />
             </label>
             <label>E-mail
               <input type="email" placeholder="jij@voorbeeld.nl" />
             </label>
+            <label>Telefoon
+              <input type="tel" placeholder="+31 6 12345678" />
+            </label>
+            <label>Geboortedatum
+              <input type="date" />
+            </label>
             <label>Type
               <select>
-                <option>Keuze A</option>
-                <option>Keuze B</option>
+                <option value="">Kies...</option>
+                <option>Particulier</option>
+                <option>Zakelijk</option>
               </select>
             </label>
             <label>Bericht
               <textarea rows="3" placeholder="Schrijf iets..."></textarea>
             </label>
             <div class="form-row">
-              <label><input type="checkbox" /> Nieuwsbrief</label>
-              <label><input type="radio" name="r" checked /> Optie 1</label>
-              <label><input type="radio" name="r" /> Optie 2</label>
+              <label><input type="checkbox" required /> Ik ga akkoord met voorwaarden</label>
             </div>
-            <button type="button" class="btn primary">Verzenden</button>
+            <div class="form-row">
+              <label><input type="radio" name="contact" value="email" /> E-mail contact</label>
+              <label><input type="radio" name="contact" value="phone" /> Telefoon contact</label>
+            </div>
+            <button type="submit" class="btn">Verzenden</button>
           </form>
 
          <pre class="code"><code>&lt;form&gt;
-  &lt;label&gt;Naam
-    &lt;input type="text" placeholder="Jouw naam"&gt;
+  &lt;label&gt;Naam (verplicht)
+    &lt;input type="text" placeholder="Jouw naam" required&gt;
   &lt;/label&gt;
 
   &lt;label&gt;E-mail
@@ -527,20 +987,13 @@
 
   &lt;label&gt;Type
     &lt;select&gt;
-      &lt;option&gt;Keuze A&lt;/option&gt;
-      &lt;option&gt;Keuze B&lt;/option&gt;
+      &lt;option value=""&gt;Kies...&lt;/option&gt;
+      &lt;option&gt;Particulier&lt;/option&gt;
     &lt;/select&gt;
   &lt;/label&gt;
 
-  &lt;label&gt;Bericht
-    &lt;textarea rows="3" placeholder="Schrijf iets..."&gt;&lt;/textarea&gt;
-  &lt;/label&gt;
-
-  &lt;div&gt;
-    &lt;label&gt;&lt;input type="checkbox"&gt; Nieuwsbrief&lt;/label&gt;
-    &lt;label&gt;&lt;input type="radio" name="r" checked&gt; Optie 1&lt;/label&gt;
-    &lt;label&gt;&lt;input type="radio" name="r"&gt; Optie 2&lt;/label&gt;
-  &lt;/div&gt;
+  &lt;label&gt;&lt;input type="checkbox" required&gt; Voorwaarden&lt;/label&gt;
+  &lt;label&gt;&lt;input type="radio" name="contact"&gt; E-mail&lt;/label&gt;
 
   &lt;button type="submit"&gt;Verzenden&lt;/button&gt;
 &lt;/form&gt;</code></pre>
@@ -548,20 +1001,67 @@
       </article>
     </section>
 
-    <!-- MEDIA QUERIES -->
-    <section id="mediaqueries" class="panel" data-search="media queries responsive breakpoint">
-      <h2>Media Queries</h2>
+    <!-- RESPONSIVE DESIGN -->
+    <section id="responsive" class="panel" data-search="responsive design media queries breakpoints mobile first viewport meta">
+      <h2>Responsive Design</h2>
+      
       <article class="card">
-        <header><span class="chip chip-css">{CSS}</span> Responsieve demo</header>
-        <p>Dit blok verandert kleur bij kleinere schermen (zie CSS).</p>
-        <div class="responsive-box">Resize je venster</div>
-        <pre class="code"><code>@media (max-width: 768px) { .responsive-box { background: #1dd3b0; } }
-@media (max-width: 480px) { .responsive-box { background: #f72585; } }</code></pre>
+        <header><span class="chip chip-css">{CSS}</span> Media Queries & Breakpoints</header>
+        <div class="demo">
+          <div class="responsive-demo-area">
+            <div class="responsive-box">Resize je venster om effect te zien</div>
+            <div class="breakpoint-indicator">
+              <span id="current-breakpoint">Desktop</span>
+            </div>
+          </div>
+          <pre class="code"><code>/* Mobile First approach */
+.container { padding: 10px; }
+
+/* Tablet */
+@media (min-width: 768px) {
+  .container { padding: 20px; }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .container { padding: 30px; }
+}
+
+/* Landscape orientation */
+@media (orientation: landscape) {
+  .hero { height: 50vh; }
+}
+
+/* High resolution screens */
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .logo { background-image: url('logo@2x.png'); }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body { background: #1a1a1a; color: white; }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; }
+}</code></pre>
+        </div>
+
+        <details class="hint">
+          <summary>Responsive Best Practices</summary>
+          <ul>
+            <li><strong>Mobile First</strong>: Begin met mobile design, breid uit naar desktop</li>
+            <li><strong>Breakpoints</strong>: 768px (tablet), 1024px (desktop) zijn veelgebruikt</li>
+            <li><strong>Viewport Meta</strong>: <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></li>
+            <li><strong>Flexible Units</strong>: Gebruik %, rem, vw/vh voor responsive afmetingen</li>
+          </ul>
+        </details>
       </article>
     </section>
 
     <footer class="footer glass">
-      <p> Vishal Tewari©</p>
+      <p>Vishal Tewari© - Complete HTML & CSS Cheatsheet</p>
     </footer>
   </main>
 

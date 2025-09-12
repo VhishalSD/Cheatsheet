@@ -13,28 +13,37 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar glass">
-    <div class="nav-inner">
-      <div class="brand">Vishal<span>_T©</span></div>
-      <input id="search" type="search" placeholder="Zoek: selectors, units, colors, flex, grid..." aria-label="Zoek in de cheatsheet" />
-      <button id="menuBtn" class="menu-btn" aria-label="Menu">&#9776;</button>
-      <ul id="menu" class="menu">
-        <li><a href="#intro">Intro</a></li>
-        <li><a href="#html-basics">HTML Basics</a></li>
-        <li><a href="#css-selectors">CSS Selectors</a></li>
-        <li><a href="#css-units">Units & Colors</a></li>
-        <li><a href="#typography">Typography</a></li>
-        <li><a href="#display-layout">Display & Layout</a></li>
-        <li><a href="#visual-styling">Visual Styling</a></li>
-        <li><a href="#flex">Flexbox</a></li>
-        <li><a href="#grid">CSS Grid</a></li>
-        <li><a href="#position">Position</a></li>
-        <li><a href="#animations">Animations</a></li>
-        <li><a href="#forms">Formulieren</a></li>
-        <li><a href="#responsive">Responsive</a></li>
-      </ul>
-    </div>
-  </nav>
+<nav class="navbar glass">
+  <div class="nav-inner">
+    <div class="brand">Vishal<span>_T©</span></div>
+    <input 
+      id="search" 
+      type="search" 
+      placeholder="Zoek: selectors, units, colors, flex, grid..." 
+      aria-label="Zoek in de cheatsheet" 
+    />
+
+    <!-- Dit is je enige toggle-knop -->
+    <button id="menuBtn" class="menu-btn" aria-label="Menu">&#9776;</button>
+
+    <!-- Dit is je enige menu -->
+    <ul id="menu" class="menu">
+      <li><a href="#intro">Intro</a></li>
+      <li><a href="#html-basics">HTML Basics</a></li>
+      <li><a href="#css-selectors">CSS Selectors</a></li>
+      <li><a href="#css-units">Units & Colors</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#display-layout">Display & Layout</a></li>
+      <li><a href="#visual-styling">Visual Styling</a></li>
+      <li><a href="#flex">Flexbox</a></li>
+      <li><a href="#grid">CSS Grid</a></li>
+      <li><a href="#position">Position</a></li>
+      <li><a href="#animations">Animations</a></li>
+      <li><a href="#forms">Formulieren</a></li>
+      <li><a href="#responsive">Responsive</a></li>
+    </ul>
+  </div>
+</nav>
 
   <main class="container">
     <!-- INTRO -->
@@ -316,13 +325,12 @@ gap: clamp(1rem, 5vw, 3rem);  /* Min, preferred, max */</code></pre>
         </div>
 
         <details class="hint">
-          <summary>Unit Guidelines</summary>
+          <summary>Simpele Uitleg</summary>
           <ul>
-            <li><strong>px</strong>: Voor borders, kleine details, pixel-perfect design</li>
-            <li><strong>rem</strong>: Voor font-sizes, spacing (schaalbaar)</li>
-            <li><strong>em</strong>: Voor padding/margin relatief aan tekst</li>
-            <li><strong>%</strong>: Voor layout widths, responsive containers</li>
-            <li><strong>vw/vh</strong>: Voor full-screen sections, responsive typography</li>
+            <li><strong>px</strong>: Exacte grootte (zoals 16px = altijd 16 pixels)</li>
+            <li><strong>rem</strong>: Relatief aan basis tekstgrootte (1rem = meestal 16px)</li>
+            <li><strong>%</strong>: Percentage van parent element (50% = helft van ouder)</li>
+            <li><strong>vw/vh</strong>: Percentage van schermgrootte (100vw = volle breedte)</li>
           </ul>
         </details>
       </article>

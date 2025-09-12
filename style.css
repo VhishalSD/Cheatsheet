@@ -143,6 +143,58 @@ h3{ font-size: 1.2rem; margin: 0 0 8px; color: #cfe4ff; }
 .demo-heading{ font-size: 1.2rem !important; margin: 4px 0 !important; }
 .demo-link{ color: var(--c-accent); text-decoration: underline; }
 .demo-img{ border-radius: 4px; margin-top: 8px; }
+/* ====== LINKS & IMAGES DEMO ====== */
+.links-images-demo{
+  text-align: center; padding: 16px;
+  background: rgba(0,0,0,.1); border-radius: 12px;
+}
+.links-images-demo h3{
+  color: var(--c-accent); margin: 0 0 12px; font-size: 1rem;
+}
+
+.demo-link-large{
+  display: inline-block;
+  background: linear-gradient(135deg, var(--c-accent), var(--c-accent-2));
+  color: #061124; text-decoration: none; font-weight: 700;
+  padding: 12px 24px; border-radius: 8px; margin: 8px 0 24px;
+  box-shadow: 0 4px 12px rgba(0,229,255,.3);
+  transition: all 0.3s ease;
+}
+.demo-link-large:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,229,255,.4);
+}
+
+.img-demo-container{
+  background: rgba(255,255,255,.02); 
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px; padding: 16px;
+}
+
+.demo-img-large{ 
+  width: 100%; max-width: 300px; height: auto;
+  border-radius: 12px; margin: 0 0 12px;
+  border: 3px solid rgba(0,229,255,.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,.3);
+}
+.demo-img-large:hover{ 
+  transform: scale(1.02); 
+  border-color: var(--c-accent);
+}
+
+.btn-demo{
+  background: linear-gradient(90deg, var(--c-accent-3), var(--c-accent));
+  border: none; color: #061124; font-weight: 700;
+  padding: 10px 20px; border-radius: 8px; cursor: pointer;
+  font-size: 0.9rem; 
+  box-shadow: 0 4px 12px rgba(29,211,176,.3);
+  transition: all 0.3s ease;
+}
+.btn-demo:hover{ 
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 16px rgba(29,211,176,.4);
+}
 
 /* ====== CSS SELECTORS DEMO ====== */
 .selector-playground{
@@ -442,22 +494,31 @@ h3{ font-size: 1.2rem; margin: 0 0 8px; color: #cfe4ff; }
   border: 1px solid rgba(255,255,255,.06);
 }
 
-/* ====== HINTS ====== */
+/* Langzaam blinkende hint */
 details.hint summary {
     cursor: pointer;
     font-weight: bold;
     font-size: 1.1rem;
-    color: #0095ff; /* opvallende kleur */
-    background: rgba(35, 24, 156, 0.544); /* lichte achtergrond zodat het eruit springt */
+    color: #00aeff; /* opvallende kleur */
+    background: rgba(35, 24, 156, 0.544);
     padding: 6px 10px;
     border-radius: 6px;
     display: inline-block;
     transition: background 0.5s;
+    
+    /* Blink animatie toevoegen */
+    animation: slow-blink 4s ease-in-out infinite;
+}
+
+@keyframes slow-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 details.hint summary:hover {
     background: #003cff;
     color: white;
+    /* Animatie blijft actief tijdens hover */
 }
 
 /* ====== UTILITY CLASSES ====== */

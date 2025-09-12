@@ -465,6 +465,29 @@ function setupResponsiveIndicator() {
     updateBreakpoint(); // Initialize
 }
 
+// Random image changer for demo
+function changeImage() {
+    const img = document.getElementById('random-img');
+    if (img) {
+        // Generate random number between 1-1000 for picsum.photos
+        const randomNum = Math.floor(Math.random() * 1000) + 1;
+        
+        // Add loading effect
+        img.style.opacity = '0.5';
+        
+        // Update with new random picsum photo
+        img.src = `https://picsum.photos/300/200?random=${randomNum}`;
+        
+        // Restore opacity when loaded
+        img.onload = function() {
+            img.style.opacity = '1';
+        };
+    }
+}
+
+// Make changeImage available globally
+window.changeImage = changeImage;
+
 // Smooth scrolling for navigation links
 function setupSmoothScrolling() {
     const navLinks = menu.querySelectorAll('a[href^="#"]');

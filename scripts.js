@@ -171,9 +171,9 @@ function setupColorDemo() {
     
     const colorExamples = {
         hex: { value: '#ff6b35', desc: 'Hexadecimaal - meest gebruikt formaat', color: '#ff6b35' },
-        rgb: { value: 'rgb(255, 107, 53)', desc: 'Red Green Blue waarden (0-255)', color: 'rgb(255, 107, 53)' },
-        hsl: { value: 'hsl(16, 100%, 60%)', desc: 'Hue Saturation Lightness - intuïtief', color: 'hsl(16, 100%, 60%)' },
-        rgba: { value: 'rgba(255, 107, 53, 0.7)', desc: 'RGB met transparantie (alpha 0-1)', color: 'rgba(255, 107, 53, 0.7)' }
+        rgb: { value: 'rgb(29, 211, 176)', desc: 'Red Green Blue waarden (0-255)', color: 'rgb(29, 211, 176)' },
+        hsl: { value: 'hsl(240, 100%, 70%)', desc: 'Hue Saturation Lightness - intuïtief', color: 'hsl(240, 100%, 70%)' },
+        rgba: { value: 'rgba(123, 92, 255, 0.8)', desc: 'RGB met transparantie (alpha 0-1)', color: 'rgba(123, 92, 255, 0.8)' }
     };
     
     function updateColorDemo() {

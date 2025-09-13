@@ -430,31 +430,79 @@ word-spacing: 2px;</code></pre>
         </div>
       </article>
 
-      <!-- Web Fonts -->
+      <!-- Typography Demo's -->
       <article class="card">
-        <header><span class="chip chip-css">{CSS}</span> Web Fonts</header>
-        <div class="demo">
+        <header><span class="chip chip-css">{CSS}</span><span class="chip chip-demo">DEMO</span> Text Styling</header>
+        <div class="demo two-col">
           <div class="demo-left">
-            <p style="font-family: 'Orbitron', monospace;">Orbitron - Futuristic</p>
-            <p style="font-family: 'Rajdhani', sans-serif;">Rajdhani - Modern</p>
-            <p style="font-family: Georgia, serif;">Georgia - Serif</p>
-            <p style="font-family: 'Courier New', monospace;">Courier - Monospace</p>
+            <div class="typography-examples">
+              <h3>Text Alignment</h3>
+              <p style="text-align: left;">Links uitgelijnd</p>
+              <p style="text-align: center;">Gecentreerd</p>
+              <p style="text-align: right;">Rechts uitgelijnd</p>
+              
+              <h3>Text Decoration</h3>
+              <p style="text-decoration: underline;">Onderstreepte tekst</p>
+              <p style="text-decoration: line-through;">Doorgestreepte tekst</p>
+              <p style="text-transform: uppercase;">hoofdletters</p>
+              <p style="font-variant: small-caps;">Small Caps Tekst</p>
+              
+              <h3>Text Shadow</h3>
+              <p class="text-shadow-demo">Tekst met schaduw</p>
+            </div>
           </div>
-          <pre class="code"><code>/* Google Fonts in HTML head */
+          <pre class="code"><code>/* Text alignment */
+text-align: left;     /* Links */
+text-align: center;   /* Midden */
+text-align: right;    /* Rechts */
+text-align: justify;  /* Uitgevuld */
+
+/* Text decoration */
+text-decoration: underline;
+text-decoration: line-through;
+text-decoration: none;
+
+/* Text transform */
+text-transform: uppercase;    /* HOOFDLETTERS */
+text-transform: lowercase;    /* kleine letters */
+text-transform: capitalize;   /* Eerste Letter */
+
+/* Advanced typography */
+font-variant: small-caps;     /* KLEINE HOOFDLETTERS */
+text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+word-spacing: 4px;</code></pre>
+        </div>
+      </article>
+
+      <!-- Web Fonts Demo -->
+      <article class="card">
+        <header><span class="chip chip-css">{CSS}</span> Web Fonts Voorbeeld</header>
+        <div class="demo two-col">
+          <div class="demo-left">
+            <div class="font-examples">
+              <p class="font-orbitron">Orbitron - Futuristic font</p>
+              <p class="font-rajdhani">Rajdhani - Modern & clean</p>
+              <p class="font-serif">Georgia - Klassiek serif</p>
+              <p class="font-mono">Courier New - Monospace</p>
+              <p class="font-cursive">Cursive - Handschrift stijl</p>
+            </div>
+          </div>
+          <pre class="code"><code>&lt;!-- In HTML head --&gt;
 &lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"&gt;
 
-/* CSS @import (not recommended for performance) */
-@import url('https://fonts.googleapis.com/css2?family=Roboto');
-
-/* Font stack (fallbacks) */
-font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+/* Font families */
+font-family: 'Orbitron', monospace;
+font-family: 'Rajdhani', sans-serif;
 
 /* Generic families */
 font-family: serif;      /* Times, Georgia */
 font-family: sans-serif; /* Arial, Helvetica */
 font-family: monospace;  /* Courier, Monaco */
-font-family: cursive;    /* Comic Sans, handwriting */
-font-family: fantasy;    /* Decorative fonts */</code></pre>
+font-family: cursive;    /* Comic Sans MS */
+font-family: fantasy;    /* Decorative fonts */
+
+/* Font stack with fallbacks */
+font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;</code></pre>
         </div>
       </article>
     </section>
